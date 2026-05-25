@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__56e4c06d-98c1-47a6-9841-2ae18c7e8d86__label_thread",
+      "Bash(git *)"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+# Secrets
+.env
+*.env.local
+
+# Livrables (optionnel — décommentez si vous ne voulez pas versionner output/)
+# output/
+
+# Système
+.DS_Store

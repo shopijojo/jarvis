@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Guirchoun — Esthéticienne à Jérusalem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500;600;700&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose-50:#FBF4F1;
+    --rose-100:#F4E3DD;
+    --rose-200:#EBCFC6;
+    --rose-300:#DDB4A6;
+    --nude:#C9A795;
+    --nude-deep:#A88472;
+    --cream:#FAF6F2;
+    --cream-warm:#F2E8DC;
+    --gold:#B89968;
+    --gold-deep:#9A7E4F;
+    --ink:#3D2E2A;
+    --ink-soft:#6B5650;
+    --line:rgba(184,153,104,0.25);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* Hebrew helper */
+  .he{
+    font-family:'Frank Ruhl Libre','Heebo',serif;
+    direction:rtl;
+    font-weight:300;
+  }
+  .he-body{
+    font-family:'Heebo',sans-serif;
+    direction:rtl;
+    font-weight:300;
+  }
+
+  /* Section base */
+  section{padding:120px 6vw}
+  .container{max-width:1240px;margin:0 auto}
+
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:400;color:var(--ink);letter-spacing:0.01em}
+  h2{font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1}
+  h3{font-size:1.5rem;line-height:1.2}
+
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    font-size:0.72rem;
+    color:var(--gold-deep);
+    font-weight:500;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+
+  .section-head{
+    text-align:center;
+    margin-bottom:70px;
+  }
+  .section-head .he{
+    color:var(--nude-deep);
+    font-size:1.05rem;
+    margin-top:14px;
+    letter-spacing:0.04em;
+  }
+
+  /* Decorative gold separator */
+  .ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin:24px auto;
+    color:var(--gold);
+  }
+  .ornament::before, .ornament::after{
+    content:"";
+    height:1px;
+    width:48px;
+    background:var(--gold);
+    opacity:0.6;
+  }
+  .ornament svg{width:14px;height:14px;display:block}
+
+  /* ---------- NAV ---------- */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    padding:18px 6vw;
+    display:flex;align-items:center;justify-content:space-between;
+    transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+  }
+  nav.top.scrolled{
+    background:rgba(250,246,242,0.94);
+    backdrop-filter:saturate(1.2) blur(10px);
+    padding:14px 6vw;
+    box-shadow:0 1px 0 rgba(184,153,104,0.15);
+  }
+  .brand{
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem;
+    letter-spacing:0.18em;
+    color:var(--cream);
+    text-transform:uppercase;
+    transition:color .35s ease;
+  }
+  nav.top.scrolled .brand{color:var(--ink)}
+  .brand span{color:var(--gold)}
+  .nav-links{display:flex;gap:38px;align-items:center}
+  .nav-links a{
+    color:var(--cream);
+    text-decoration:none;
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:400;
+    transition:color .25s ease;
+  }
+  nav.top.scrolled .nav-links a{color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--gold)}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--cream);width:28px;height:20px;position:relative}
+  .menu-btn span{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .3s}
+  .menu-btn span:nth-child(1){top:2px}
+  .menu-btn span:nth-child(2){top:50%;transform:translateY(-50%)}
+  .menu-btn span:nth-child(3){bottom:2px}
+  nav.top.scrolled .menu-btn{color:var(--ink)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    height:100vh;min-height:680px;
+    position:relative;
+    padding:0 6vw;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    color:var(--cream);
+    text-align:center;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1800&q=80') center/cover no-repeat;
+    transform:scale(1.05);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(61,46,42,0.35) 0%, rgba(61,46,42,0.15) 35%, rgba(61,46,42,0.55) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:780px}
+  .hero .eyebrow{color:#F2E8DC;opacity:0.9}
+  .hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(3rem,8vw,6rem);
+    font-weight:400;
+    line-height:1;
+    color:var(--cream);
+    margin:8px 0 22px;
+    letter-spacing:0.005em;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:#F4E3DD;
+  }
+  .hero-sub{
+    font-size:1.05rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    font-weight:300;
+    margin-bottom:6px;
+    color:#FBF4F1;
+  }
+  .hero-sub-he{
+    font-family:'Frank Ruhl Libre',serif;
+    direction:rtl;
+    font-size:1.35rem;
+    letter-spacing:0.04em;
+    color:#F4E3DD;
+    margin-bottom:42px;
+    font-weight:300;
+  }
+  .hero-scroll{
+    position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+    color:var(--cream);
+    font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;
+    opacity:0.85;
+    z-index:2;
+  }
+  .hero-scroll::after{
+    content:"";display:block;width:1px;height:34px;background:var(--cream);
+    margin:14px auto 0;
+    animation:scrollLine 2.2s ease-in-out infinite;
+    transform-origin:top;
+  }
+  @keyframes scrollLine{
+    0%,100%{transform:scaleY(0.2);opacity:0.4}
+    50%{transform:scaleY(1);opacity:1}
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:18px 38px;
+    font-family:'Jost',sans-serif;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:0.78rem;
+    font-weight:500;
+    border-radius:999px;
+    transition:all .3s ease;
+    cursor:pointer;border:none;
+  }
+  .btn-primary{
+    background:var(--cream);
+    color:var(--ink);
+    box-shadow:0 12px 30px -10px rgba(0,0,0,0.35);
+  }
+  .btn-primary:hover{
+    background:var(--gold);
+    color:var(--cream);
+    transform:translateY(-2px);
+    box-shadow:0 18px 40px -10px rgba(154,126,79,0.5);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border:1px solid var(--gold);
+  }
+  .btn-outline:hover{background:var(--gold);color:var(--cream)}
+  .btn-wa{
+    background:#25D366;
+    color:#fff;
+    box-shadow:0 14px 30px -10px rgba(37,211,102,0.5);
+  }
+  .btn-wa:hover{background:#1FB957;transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--cream)}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:28px;
+  }
+  .svc{
+    position:relative;
+    overflow:hidden;
+    border-radius:6px;
+    background:var(--rose-50);
+    aspect-ratio:4/5;
+    cursor:pointer;
+  }
+  .svc:nth-child(1){grid-column:span 5}
+  .svc:nth-child(2){grid-column:span 7}
+  .svc:nth-child(3){grid-column:span 4}
+  .svc:nth-child(4){grid-column:span 4}
+  .svc:nth-child(5){grid-column:span 4}
+
+  .svc-img{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    transition:transform 1.2s ease;
+  }
+  .svc:hover .svc-img{transform:scale(1.06)}
+  .svc-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(61,46,42,0) 35%, rgba(61,46,42,0.75) 100%);
+  }
+  .svc-content{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:32px 30px;
+    color:var(--cream);
+  }
+  .svc-content .he{color:#F4E3DD;font-size:0.95rem;opacity:0.92;margin-top:4px}
+  .svc h3{
+    font-family:'Playfair Display',serif;
+    color:var(--cream);
+    font-size:1.7rem;
+    font-weight:400;
+  }
+  .svc-num{
+    position:absolute;top:24px;left:28px;
+    color:var(--cream);
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:0.95rem;
+    letter-spacing:0.18em;
+    opacity:0.85;
+  }
+  .svc-desc{
+    font-size:0.85rem;
+    letter-spacing:0.02em;
+    margin-top:10px;
+    opacity:0.92;
+    max-width:90%;
+    line-height:1.5;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--cream-warm);
+    position:relative;
+  }
+  .about::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(235,207,198,0.5) 0%, transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(184,153,104,0.12) 0%, transparent 45%);
+    pointer-events:none;
+  }
+  .about-wrap{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:90px;
+    align-items:center;
+    position:relative;
+  }
+  .about-img{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -25px rgba(61,46,42,0.35);
+  }
+  .about-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .about-img::after{
+    content:"";
+    position:absolute;
+    inset:14px;
+    border:1px solid rgba(250,246,242,0.4);
+    pointer-events:none;
+  }
+  .about-badge{
+    position:absolute;
+    bottom:-40px;right:-40px;
+    width:170px;height:170px;border-radius:50%;
+    background:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    box-shadow:0 12px 30px -8px rgba(61,46,42,0.2);
+    padding:20px;
+  }
+  .about-badge .num{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:2.6rem;
+    color:var(--gold);
+    line-height:1;
+  }
+  .about-badge .lbl{
+    font-size:0.65rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .about-text h2{margin-bottom:8px}
+  .about-text .he{color:var(--nude-deep);font-size:1.15rem;margin-bottom:30px;display:block}
+  .about-text p{
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    line-height:1.85;
+  }
+  .about-text p.he-body{font-size:0.95rem;color:var(--ink-soft);opacity:0.85}
+  .about-sign{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:1.6rem;
+    color:var(--gold);
+    margin-top:24px;
+  }
+  .about-values{
+    display:flex;gap:36px;margin-top:36px;flex-wrap:wrap;
+  }
+  .about-values div{
+    border-top:1px solid var(--line);
+    padding-top:14px;
+    min-width:120px;
+  }
+  .about-values .v-t{
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    color:var(--ink);
+  }
+  .about-values .v-s{
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--nude-deep);
+    margin-top:2px;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--cream)}
+  .gal-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:180px;
+    gap:14px;
+  }
+  .gal-item{
+    overflow:hidden;
+    border-radius:4px;
+    background:var(--rose-100);
+    position:relative;
+    cursor:pointer;
+  }
+  .gal-item img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform 1s ease;
+  }
+  .gal-item:hover img{transform:scale(1.07)}
+  .gal-item::after{
+    content:"";
+    position:absolute;inset:0;
+    background:rgba(61,46,42,0);
+    transition:background .3s;
+  }
+  .gal-item:hover::after{background:rgba(61,46,42,0.1)}
+
+  .gal-item.tall{grid-row:span 2}
+  .gal-item.wide{grid-column:span 2}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:linear-gradient(180deg, var(--cream) 0%, var(--rose-100) 100%);
+    text-align:center;
+    position:relative;
+  }
+  .contact-card{
+    max-width:760px;margin:0 auto;
+    background:var(--cream);
+    padding:80px 60px;
+    border-radius:6px;
+    box-shadow:0 30px 60px -25px rgba(61,46,42,0.2);
+    position:relative;
+  }
+  .contact-card::before{
+    content:"";
+    position:absolute;inset:14px;
+    border:1px solid var(--line);
+    pointer-events:none;
+    border-radius:3px;
+  }
+  .contact h2{margin-bottom:6px}
+  .contact .he{color:var(--nude-deep);display:block;margin-bottom:24px}
+  .contact-lead{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    max-width:520px;
+    margin:0 auto 38px;
+    line-height:1.7;
+  }
+  .contact-actions{
+    display:flex;gap:18px;justify-content:center;flex-wrap:wrap;
+    margin-bottom:50px;
+  }
+  .contact-info{
+    display:flex;justify-content:center;gap:60px;flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:36px;
+  }
+  .info-item{text-align:center;min-width:140px}
+  .info-item .ic{
+    color:var(--gold);
+    margin-bottom:10px;
+    display:flex;justify-content:center;
+  }
+  .info-item .ic svg{width:22px;height:22px}
+  .info-item .t{
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;color:var(--ink);
+    margin-bottom:4px;
+  }
+  .info-item .s{
+    font-size:0.78rem;color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+  .info-item a{color:inherit;text-decoration:none;transition:color .2s}
+  .info-item a:hover{color:var(--gold)}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:50px 6vw 30px;
+    text-align:center;
+  }
+  footer .brand{color:var(--cream);font-size:1.4rem;letter-spacing:0.22em}
+  footer .brand span{color:var(--gold)}
+  footer .tag{
+    margin-top:8px;
+    color:rgba(250,246,242,0.55);
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+  }
+  footer .tag-he{
+    font-family:'Frank Ruhl Libre',serif;direction:rtl;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    margin-top:4px;
+    color:rgba(250,246,242,0.65);
+  }
+  footer .fline{
+    height:1px;background:rgba(250,246,242,0.12);
+    max-width:160px;margin:28px auto;
+  }
+  footer .copy{
+    font-size:0.7rem;
+    color:rgba(250,246,242,0.4);
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- WhatsApp FAB ---------- */
+  .wa-fab{
+    position:fixed;bottom:28px;right:28px;z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    text-decoration:none;
+    box-shadow:0 12px 30px -8px rgba(37,211,102,0.6);
+    transition:transform .25s ease;
+  }
+  .wa-fab:hover{transform:scale(1.08)}
+  .wa-fab svg{width:30px;height:30px}
+  .wa-pulse{
+    position:absolute;inset:0;border-radius:50%;
+    background:#25D366;
+    animation:pulse 2s ease-out infinite;
+    z-index:-1;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);opacity:0.5}
+    100%{transform:scale(1.7);opacity:0}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    section{padding:90px 6vw}
+    .nav-links{display:none}
+    .nav-links.open{
+      display:flex;flex-direction:column;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);
+      padding:30px 6vw;gap:22px;
+      box-shadow:0 10px 30px -10px rgba(0,0,0,0.15);
+    }
+    .nav-links.open a{color:var(--ink) !important}
+    .menu-btn{display:block}
+    .services-grid{grid-template-columns:1fr 1fr;gap:18px}
+    .svc{grid-column:span 1 !important;aspect-ratio:3/4}
+    .svc:nth-child(5){grid-column:span 2 !important;aspect-ratio:16/9}
+    .about-wrap{grid-template-columns:1fr;gap:60px}
+    .about-img{max-width:420px;margin:0 auto}
+    .about-badge{width:130px;height:130px;bottom:-25px;right:0}
+    .about-badge .num{font-size:2rem}
+    .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+    .gal-item.wide{grid-column:span 2}
+    .contact-card{padding:50px 28px}
+    .contact-info{gap:30px}
+    .hero{min-height:600px}
+    .hero h1{letter-spacing:0}
+    .wa-fab{width:54px;height:54px;bottom:20px;right:20px}
+    .wa-fab svg{width:26px;height:26px}
+  }
+  @media (max-width: 520px){
+    .services-grid{grid-template-columns:1fr;gap:16px}
+    .svc{grid-column:span 1 !important;aspect-ratio:4/5}
+    .svc:nth-child(5){grid-column:span 1 !important;aspect-ratio:4/5}
+    .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
+    .about-values{gap:20px}
+    .about-values div{min-width:100px}
+    .contact-info{flex-direction:column;gap:30px}
+    .hero h1{font-size:3.4rem}
+    .hero-sub{font-size:0.78rem;letter-spacing:0.26em}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top" id="nav">
+  <a href="#" class="brand">Hannah<span>·</span>Guirchoun</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#about">À propos</a>
+    <a href="#gallery">Galerie</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Esthéticienne · Jérusalem</span>
+    <h1>Hannah<br><em>Guirchoun</em></h1>
+    <div class="ornament">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2 L11.2 8.8 L18 10 L11.2 11.2 L10 18 L8.8 11.2 L2 10 L8.8 8.8 Z"/></svg>
+    </div>
+    <p class="hero-sub">L'art du soin sur-mesure</p>
+    <p class="hero-sub-he">קוסמטיקאית · ירושלים</p>
+    <a href="https://wa.me/97253951305" class="btn btn-primary" target="_blank" rel="noopener">
+      Prendre rendez-vous
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">Découvrir</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Prestations</span>
+      <h2>Un soin pensé pour vous</h2>
+      <p class="he">הטיפול המושלם, רק עבורך</p>
+      <div class="ornament">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2 L11.2 8.8 L18 10 L11.2 11.2 L10 18 L8.8 11.2 L2 10 L8.8 8.8 Z"/></svg>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <article class="svc reveal">
+        <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=80')"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">01 / Visage</span>
+        <div class="svc-content">
+          <h3>Soins du visage</h3>
+          <p class="he">טיפולי פנים</p>
+          <p class="svc-desc">Nettoyage profond, hydratation, anti-âge. Un protocole personnalisé selon votre peau.</p>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80')"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">02 / Maquillage</span>
+        <div class="svc-content">
+          <h3>Maquillage</h3>
+          <p class="he">איפור</p>
+          <p class="svc-desc">Jour, soir, mariée. Un teint lumineux et naturel pour révéler votre beauté.</p>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=80')"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">03 / Mains</span>
+        <div class="svc-content">
+          <h3>Manucure</h3>
+          <p class="he">מניקור</p>
+          <p class="svc-desc">Soin complet des ongles, pose vernis classique ou semi-permanent.</p>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=900&q=80')"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">04 / Pieds</span>
+        <div class="svc-content">
+          <h3>Pédicure</h3>
+          <p class="he">פדיקור</p>
+          <p class="svc-desc">Soin réparateur des pieds, gommage, massage et finition impeccable.</p>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&q=80')"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">05 / Nail Art</span>
+        <div class="svc-content">
+          <h3>Gel &amp; Nail art</h3>
+          <p class="he">ג'ל ונייל ארט</p>
+          <p class="svc-desc">Pose de gel sculpté, french, designs sur-mesure. Tenue parfaite, finition luxueuse.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80" alt="Hannah Guirchoun" />
+        <div class="about-badge">
+          <div>
+            <div class="num">10<span style="font-size:1.2rem">+</span></div>
+            <div class="lbl">Années d'expérience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <span class="eyebrow">À propos</span>
+        <h2>Une passion devenue<br><em style="font-style:italic;color:var(--gold)">vocation</em></h2>
+        <p class="he">תשוקה שהפכה לייעוד</p>
+
+        <p>Bienvenue dans mon univers. Je m'appelle Hannah, et depuis plus de dix ans, je consacre mon savoir-faire à révéler la beauté singulière de chaque femme qui franchit ma porte.</p>
+        <p>Mon approche est simple : prendre le temps de vous écouter, comprendre votre peau, vos envies, et vous offrir un moment hors du temps. Chaque soin est pensé comme une parenthèse, dans un cocon où l'élégance se conjugue à la douceur.</p>
+        <p class="he-body">ברוכות הבאות לעולם שלי. אני הנה, ובמשך למעלה מעשור אני מקדישה את הידע שלי כדי לחשוף את היופי הייחודי של כל אישה שנכנסת לסלון שלי.</p>
+
+        <div class="about-sign">— Hannah</div>
+
+        <div class="about-values">
+          <div>
+            <div class="v-t">Sur-mesure</div>
+            <div class="v-s">Personnalisé</div>
+          </div>
+          <div>
+            <div class="v-t">Premium</div>
+            <div class="v-s">Produits haut de gamme</div>
+          </div>
+          <div>
+            <div class="v-t">Bienveillance</div>
+            <div class="v-s">Écoute & douceur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Galerie</span>
+      <h2>L'instant beauté</h2>
+      <p class="he">רגעי יופי</p>
+      <div class="ornament">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2 L11.2 8.8 L18 10 L11.2 11.2 L10 18 L8.8 11.2 L2 10 L8.8 8.8 Z"/></svg>
+      </div>
+    </div>
+
+    <div class="gal-grid reveal">
+      <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=700&q=80" alt=""/></div>
+      <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=700&q=80" alt=""/></div>
+      <div class="gal-item wide"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=900&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1583241475880-083f84372725?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=700&q=80" alt=""/></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=80" alt=""/></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Réservons votre moment</h2>
+      <p class="he">בואי נקבע את הרגע שלך</p>
+      <p class="contact-lead">Un soin, une question, un conseil ? Écrivez-moi directement sur WhatsApp, je vous réponds avec plaisir.</p>
+
+      <div class="contact-actions">
+        <a href="https://wa.me/97253951305" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.5.1c-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3 2 3.1 4.9 4.4c.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.4-1.4c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://instagram.com" class="btn btn-outline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          Instagram
+        </a>
+      </div>
+
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg></div>
+          <div class="t">Jérusalem</div>
+          <div class="s">ירושלים, ישראל</div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="t">Sur rendez-vous</div>
+          <div class="s">Dimanche — Jeudi</div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="t"><a href="https://wa.me/97253951305" target="_blank" rel="noopener">+972 · · · · · · · · ·</a></div>
+          <div class="s">WhatsApp uniquement</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="brand">Hannah<span>·</span>Guirchoun</div>
+  <div class="tag">Esthéticienne · Jérusalem</div>
+  <div class="tag-he">קוסמטיקאית בירושלים</div>
+  <div class="fline"></div>
+  <div class="copy">© 2026 · Tous droits réservés</div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/97253951305" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="wa-pulse"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.5.1c-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3 2 3.1 4.9 4.4c.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.8L2 22l5.4-1.4c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+</a>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    nav.classList.add('scrolled');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
