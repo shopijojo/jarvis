@@ -139,10 +139,10 @@ p{font-size:1rem;line-height:1.72;}
 .nav_container{display:flex;align-items:center;gap:1.375rem;min-height:5.25rem;padding-top:0.75rem;padding-bottom:0.75rem;}
 
 .brand_link{display:flex;align-items:center;gap:0.875rem;flex-shrink:0;}
-.brand_mono_wrap{width:3.875rem;flex-shrink:0;}
+.brand_mono_wrap{width:5.5rem;flex-shrink:0;}
 .brand_mono_wrap .brand_mono{width:100%;color:#B85A79;}
 .brand_wordmark{line-height:1;display:flex;flex-direction:column;gap:0.3125rem;}
-.brand_name{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.4375rem;color:#1E0619;letter-spacing:0.005em;white-space:nowrap;}
+.brand_name{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.625rem;color:#1E0619;letter-spacing:0.01em;white-space:nowrap;text-transform:uppercase;}
 .brand_role_row{display:flex;align-items:center;gap:0.5rem;}
 .brand_role_line{width:1.375rem;height:0.09375rem;background-color:#C79A5B;border-radius:0.125rem;display:block;flex-shrink:0;}
 .brand_role_text{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.5625rem;letter-spacing:0.34em;text-transform:uppercase;color:#8F6230;}
@@ -229,7 +229,7 @@ p{font-size:1rem;line-height:1.72;}
 .services_grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;}
 .service_card{background-color:#fff;border:1px solid #E8DDD4;border-radius:1.625rem;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.3s ease,box-shadow 0.3s ease;}
 .service_card:hover{transform:translateY(-0.375rem);box-shadow:0 2.375rem 5rem -2.625rem rgba(43,10,36,0.42);}
-.service_card_img{aspect-ratio:4/3;width:100%;}
+.service_card_img{aspect-ratio:4/3;width:100%;object-fit:cover;display:block;}
 .service_card_body{padding:1.25rem 1.25rem 1.5rem;text-align:center;}
 .service_card_title{font-size:1.3rem;color:#90405A;margin-bottom:0;}
 .services_cta{text-align:center;margin-top:2.875rem;}
@@ -296,11 +296,11 @@ p{font-size:1rem;line-height:1.72;}
 .visit_header{max-width:62ch;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:2.625rem;}
 .visit_heading{margin-top:1rem;}
 .visit_grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-.visit_cell{background-color:#fff;border:1px solid #E8DDD4;border-radius:1.625rem;padding:1.875rem 1.5rem;text-align:center;}
-.visit_cell_icon{width:1.875rem;height:1.875rem;margin-left:auto;margin-right:auto;margin-bottom:0.875rem;color:#B85A79;display:flex;align-items:center;justify-content:center;}
+.visit_cell{background-color:#fff;border:1px solid #E8DDD4;border-radius:1.25rem;padding:1.125rem 1rem;text-align:center;}
+.visit_cell_icon{width:1.5rem;height:1.5rem;margin-left:auto;margin-right:auto;margin-bottom:0.5rem;color:#B85A79;display:flex;align-items:center;justify-content:center;}
 .visit_cell_icon_svg{width:100%;height:100%;display:block;}
-.visit_cell_label{font-family:'Mulish',system-ui,sans-serif;font-size:0.6875rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#8F6230;}
-.visit_cell_value{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;color:#90405A;margin-top:0.5rem;line-height:1.3;}
+.visit_cell_label{font-family:'Mulish',system-ui,sans-serif;font-size:0.625rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#8F6230;}
+.visit_cell_value{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#90405A;margin-top:0.3125rem;line-height:1.3;}
 .visit_cta{text-align:center;margin-top:2.875rem;}
 .visit_rdv{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.125rem;color:#90405A;margin-top:1.25rem;}
 .visit_rdv_star{font-style:normal;font-size:0.66em;vertical-align:2px;margin-right:0.3em;}
@@ -309,7 +309,7 @@ p{font-size:1rem;line-height:1.72;}
    FOOTER
    ================================================================ */
 .footer_component{background-color:#2B0A24;color:#FAF4EF;border-radius:2.75rem 2.75rem 0 0;margin-top:0.875rem;}
-.footer_grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.75rem;}
+.footer_grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
 .footer_brand_mono_wrap{width:3.75rem;margin-bottom:1rem;}
 .footer_brand_mono_wrap .brand_mono{width:100%;color:rgba(199,154,91,0.9);}
 .footer_name{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#fff;}
@@ -398,7 +398,7 @@ p{font-size:1rem;line-height:1.72;}
 
   <!-- ANNOUNCE BAR -->
   <div class="announce_bar">
-    <span data-fr="Reçue uniquement sur rendez-vous — " data-he="קבלה בתיאום מראש בלבד — ">Reçue uniquement sur rendez-vous — </span><a class="announce_link" href="https://wa.me/972539513054" target="_blank" rel="noopener"><strong data-fr="prenez RDV sur WhatsApp" data-he="קבעו תור בוואטסאפ">prenez RDV sur WhatsApp</strong></a>
+    <span data-fr="Reçus uniquement sur rendez-vous — " data-he="קבלה בתיאום מראש בלבד — ">Reçus uniquement sur rendez-vous — </span><a class="announce_link" href="https://wa.me/972539513054" target="_blank" rel="noopener"><strong data-fr="Prenez RDV sur WhatsApp" data-he="קבעו תור בוואטסאפ">Prenez RDV sur WhatsApp</strong></a>
   </div>
 
   <!-- NAVBAR -->
@@ -411,16 +411,17 @@ p{font-size:1rem;line-height:1.72;}
           <div class="brand_role_row">
             <div class="brand_role_line"></div>
             <div class="brand_role_text" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
+            <div class="brand_role_line"></div>
           </div>
         </div>
       </a>
       <nav class="w-nav-menu nav_menu" role="navigation">
-        <a href="index.html" class="w-nav-link nav_link is-active" data-fr="Accueil" data-he="בית">Accueil</a>
-        <a href="a-propos.html" class="w-nav-link nav_link" data-fr="À propos" data-he="אודות">À propos</a>
-        <a href="tarifs.html" class="w-nav-link nav_link" data-fr="Tarifs" data-he="מחירון">Tarifs</a>
-        <a href="galerie.html" class="w-nav-link nav_link" data-fr="Galerie" data-he="גלריה">Galerie</a>
-        <a href="carte-cadeau.html" class="w-nav-link nav_link" data-fr="Carte cadeau" data-he="שובר מתנה">Carte cadeau</a>
-        <a href="contact.html" class="w-nav-link nav_link" data-fr="Contact" data-he="צור קשר">Contact</a>
+        <a href="#hero" class="w-nav-link nav_link is-active" data-fr="Accueil" data-he="בית">Accueil</a>
+        <a href="#about" class="w-nav-link nav_link" data-fr="À propos" data-he="אודות">À propos</a>
+        <a href="#services" class="w-nav-link nav_link" data-fr="Soins" data-he="טיפולים">Soins</a>
+        <a href="#gallery" class="w-nav-link nav_link" data-fr="Galerie" data-he="גלריה">Galerie</a>
+        <a href="#gift" class="w-nav-link nav_link" data-fr="Carte cadeau" data-he="שובר מתנה">Carte cadeau</a>
+        <a href="#visit" class="w-nav-link nav_link" data-fr="Contact" data-he="צור קשר">Contact</a>
       </nav>
       <div class="nav_actions">
         <div class="lang_switcher" role="group" aria-label="Langue">
@@ -445,7 +446,7 @@ p{font-size:1rem;line-height:1.72;}
   <main class="main-wrapper">
 
     <!-- HERO -->
-    <section class="section_hero">
+    <section class="section_hero" id="hero">
       <div class="hero_inner">
         <div class="hero_aurora">
           <div class="hero_aurora_layer"></div>
@@ -482,7 +483,7 @@ p{font-size:1rem;line-height:1.72;}
     </section>
 
     <!-- ABOUT -->
-    <section class="section_about">
+    <section class="section_about" id="about">
       <div class="padding-global padding-section-medium">
         <div class="container-large">
           <div class="about_grid">
@@ -559,7 +560,7 @@ p{font-size:1rem;line-height:1.72;}
     </section>
 
     <!-- SERVICES -->
-    <section class="section_services">
+    <section class="section_services" id="services">
       <div class="padding-global padding-section-medium section-style-soft">
         <div class="container-large">
           <div class="services_header reveal">
@@ -573,31 +574,31 @@ p{font-size:1rem;line-height:1.72;}
           </div>
           <div class="services_grid">
             <article class="service_card reveal">
-              <div class="img-placeholder service_card_img"><div class="img-placeholder_label" data-fr="Soin du visage" data-he="טיפול פנים">Soin du visage</div></div>
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&fit=crop" alt="Soin du visage" class="service_card_img" loading="lazy">
               <div class="service_card_body">
                 <h3 class="service_card_title" data-fr="Soins du visage" data-he="טיפולי פנים">Soins du visage</h3>
               </div>
             </article>
             <article class="service_card reveal">
-              <div class="img-placeholder service_card_img"><div class="img-placeholder_label" data-fr="Épilation" data-he="הסרת שיער">Épilation</div></div>
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&fit=crop" alt="Épilation" class="service_card_img" loading="lazy">
               <div class="service_card_body">
                 <h3 class="service_card_title" data-fr="Épilation" data-he="הסרת שיער">Épilation</h3>
               </div>
             </article>
             <article class="service_card reveal">
-              <div class="img-placeholder service_card_img"><div class="img-placeholder_label" data-fr="Manucure" data-he="מניקור">Manucure</div></div>
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80&fit=crop" alt="Mains et ongles" class="service_card_img" loading="lazy">
               <div class="service_card_body">
                 <h3 class="service_card_title" data-fr="Mains et Ongles" data-he="ידיים וציפורניים">Mains et Ongles</h3>
               </div>
             </article>
             <article class="service_card reveal">
-              <div class="img-placeholder service_card_img"><div class="img-placeholder_label" data-fr="Pédicure" data-he="פדיקור">Pédicure</div></div>
+              <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80&fit=crop" alt="Pieds et pédicure" class="service_card_img" loading="lazy">
               <div class="service_card_body">
                 <h3 class="service_card_title" data-fr="Pieds et Pédicure" data-he="רגליים ופדיקור">Pieds et Pédicure</h3>
               </div>
             </article>
             <article class="service_card reveal">
-              <div class="img-placeholder service_card_img"><div class="img-placeholder_label" data-fr="Cils et sourcils" data-he="ריסים וגבות">Cils et sourcils</div></div>
+              <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&fit=crop" alt="Cils et sourcils" class="service_card_img" loading="lazy">
               <div class="service_card_body">
                 <h3 class="service_card_title" data-fr="Cils et Sourcils" data-he="ריסים וגבות">Cils et Sourcils</h3>
               </div>
@@ -613,7 +614,7 @@ p{font-size:1rem;line-height:1.72;}
     </section>
 
     <!-- GALLERY PREVIEW -->
-    <section class="section_gallery">
+    <section class="section_gallery" id="gallery">
       <div class="padding-global padding-section-medium">
         <div class="container-large">
           <div class="gallery_header reveal">
@@ -653,7 +654,7 @@ p{font-size:1rem;line-height:1.72;}
     </section>
 
     <!-- GIFT CARD -->
-    <section class="section_gift">
+    <section class="section_gift" id="gift">
       <div class="gift_grid section-style-rose">
         <div class="reveal">
           <div class="eyebrow gift_eyebrow">
@@ -1002,17 +1003,9 @@ p{font-size:1rem;line-height:1.72;}
     </section>
 
     <!-- VISIT -->
-    <section class="section_visit">
-      <div class="padding-global padding-section-medium section-style-soft">
+    <section class="section_visit" id="visit">
+      <div class="padding-global padding-section-small section-style-soft">
         <div class="container-large">
-          <div class="visit_header reveal">
-            <div class="eyebrow">
-              <div class="eyebrow_line"></div>
-              <span data-fr="Me rendre visite" data-he="לבקר אותי">Me rendre visite</span>
-              <div class="eyebrow_line"></div>
-            </div>
-            <h2 class="visit_heading" data-fr="Au cœur de Jérusalem" data-he="בלב ירושלים">Au cœur de Jérusalem</h2>
-          </div>
           <div class="visit_grid reveal">
             <div class="visit_cell">
               <div class="visit_cell_icon">
@@ -1058,27 +1051,15 @@ p{font-size:1rem;line-height:1.72;}
 
   <!-- FOOTER -->
   <footer class="footer_component">
-    <div class="padding-global padding-section-medium">
+    <div class="padding-global padding-section-small">
       <div class="container-large">
         <div class="footer_grid">
           <div>
             <div class="footer_brand_mono_wrap"><div class="brand_mono"></div></div>
             <div class="footer_name">Hannah Guirchoun</div>
             <div class="footer_role" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
-            <p class="footer_desc" data-fr="Institut de beauté à Jérusalem. Soins sur mesure, uniquement sur rendez-vous." data-he="מכון יופי בירושלים. טיפולים אישיים, בתיאום מראש בלבד.">Institut de beauté à Jérusalem. Soins sur mesure, uniquement sur rendez-vous.</p>
           </div>
           <div>
-            <div class="footer_col_heading" data-fr="Navigation" data-he="ניווט">Navigation</div>
-            <nav class="footer_nav">
-              <a href="a-propos.html" class="footer_nav_link" data-fr="À propos" data-he="אודות">À propos</a>
-              <a href="tarifs.html" class="footer_nav_link" data-fr="Tarifs" data-he="מחירון">Tarifs</a>
-              <a href="galerie.html" class="footer_nav_link" data-fr="Galerie" data-he="גלריה">Galerie</a>
-              <a href="carte-cadeau.html" class="footer_nav_link" data-fr="Carte cadeau" data-he="שובר מתנה">Carte cadeau</a>
-              <a href="contact.html" class="footer_nav_link" data-fr="Contact" data-he="צור קשר">Contact</a>
-            </nav>
-          </div>
-          <div>
-            <div class="footer_col_heading" data-fr="Contact" data-he="צור קשר">Contact</div>
             <a href="https://wa.me/972539513054" target="_blank" rel="noopener" class="footer_contact_item">
               <div class="footer_contact_icon"><div class="w-embed"><svg class="footer_contact_icon_svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.876-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></div></div>
               <span dir="ltr">+972 53-951-3054</span>
