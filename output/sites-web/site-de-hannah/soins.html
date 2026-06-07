@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes soins — Hannah Guirchoun · Institut de beauté · Jérusalem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background-color:#F6EEE6;color:#1E0619;font-family:'Mulish',system-ui,sans-serif;font-size:1.0625rem;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+a:hover{text-decoration:none;}
+
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-0.01em;color:#1E0619;}
+h1{font-size:3.5rem;}
+h2{font-size:2rem;}
+h3{font-size:1.25rem;font-weight:500;}
+p{font-size:1rem;line-height:1.72;}
+
+.padding-global{padding-left:2.5rem;padding-right:2.5rem;}
+.container-large{max-width:80rem;margin-left:auto;margin-right:auto;width:100%;}
+.padding-section-large{padding-top:7rem;padding-bottom:7rem;}
+.padding-section-medium{padding-top:5rem;padding-bottom:5rem;}
+.padding-section-small{padding-top:3rem;padding-bottom:3rem;}
+
+.button{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-family:'Mulish',system-ui,sans-serif;font-size:0.9375rem;font-weight:600;letter-spacing:0.02em;padding:0.9375rem 1.75rem;border-radius:9999rem;border:1.5px solid transparent;cursor:pointer;transition:transform 0.25s ease,box-shadow 0.25s ease,background-color 0.25s ease;white-space:nowrap;line-height:1;}
+.button:hover{transform:translateY(-0.125rem);text-decoration:none;}
+.button.is-wa{background-color:#1FB155;color:#fff;border-color:#1FB155;}
+.button.is-wa:hover{background-color:#23c763;}
+.button.is-dark{background-color:#2B0A24;color:#fff;border-color:#2B0A24;}
+.button.is-dark:hover{background-color:#200718;}
+.button.is-outline{background-color:transparent;color:#90405A;border-color:#DBBE98;}
+.button.is-outline:hover{border-color:#C79A5B;background-color:rgba(255,255,255,0.5);}
+.button.is-large{padding:1.125rem 2.25rem;font-size:1rem;}
+.button_icon{flex-shrink:0;display:flex;align-items:center;}
+.button_text{line-height:1;}
+
+.eyebrow{display:inline-flex;align-items:center;gap:0.7em;font-family:'Mulish',system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.32em;font-size:0.75rem;font-weight:700;color:#8F6230;}
+.eyebrow_line{width:1.875rem;height:0.09375rem;background-color:#C79A5B;border-radius:0.125rem;display:block;flex-shrink:0;}
+
+.lede{font-size:1.1875rem;color:#6B3A56;line-height:1.7;}
+
+.reveal{opacity:0;transform:translateY(1.625rem);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+/* ---- Logo monogram ---- */
+.brand_mono{display:inline-block;aspect-ratio:463/192;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg viewBox='110 92 463 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%237A1A63' d='M223.732040,235.586182 C223.599045,241.286926 224.972351,246.329849 226.219254,251.876175 C229.976105,246.536758 241.082458,211.209564 242.070511,201.891998 C237.290955,200.875015 232.508118,199.856995 227.339783,200.442062 C226.045609,202.419403 227.172577,206.583893 223.173431,206.037384 C219.367386,205.517258 221.222931,202.112198 220.573288,199.668335 C216.008575,197.397827 210.783386,197.623169 205.764877,196.803589 C187.488220,193.818817 169.138367,192.220001 150.668381,194.415695 C145.257874,195.058884 139.770630,196.124298 134.656387,197.945068 C126.752518,200.758972 117.848221,203.174789 119.385284,214.858826 C114.678658,213.030029 113.628685,209.192535 116.202980,204.743698 C119.463295,199.109314 125.160934,196.772339 130.838821,194.978012 C150.422318,188.789200 170.450470,188.874130 190.638596,191.234756 C199.375809,192.256439 208.137070,192.999069 216.787445,194.684509 C225.139679,196.311859 230.705765,190.438812 237.141663,186.935211 C237.430161,186.778152 237.649506,186.497314 237.932968,186.327301 C248.102051,180.227890 254.346237,171.661636 257.392395,159.904404 C259.959320,149.997009 264.685669,140.647964 268.475189,131.059265 C269.398987,128.721741 270.578949,126.525482 272.363190,124.706352 C273.730499,123.312363 275.319885,122.292419 277.249603,123.292419 C279.154083,124.279335 279.552032,126.268082 278.986328,128.077835 C277.846771,131.723312 276.513489,135.324417 275.012360,138.837982 C267.227600,157.059464 260.292267,175.598770 254.028778,194.392807 C253.882858,194.830612 253.955109,195.341141 253.930313,195.741425 C255.051178,197.101059 256.504669,196.669083 257.739807,196.584915 C278.707336,195.156052 298.740814,190.305374 317.427094,180.387283 C321.495697,178.227798 323.875488,175.170074 325.580841,170.868500 C333.933258,149.800583 342.634857,128.879059 356.422394,110.571770 C359.671661,106.257416 363.486725,102.556831 368.065979,99.741096 C370.825195,98.044525 373.737549,95.702873 377.147308,98.546402 C380.336090,101.205643 381.896027,104.614220 380.923492,108.744537 C377.264069,124.285896 369.661224,137.849625 359.610870,150.082092 C352.303497,158.976074 344.271881,167.181580 335.455322,174.627808 C331.707611,177.793045 331.128265,182.771149 329.546478,187.078735 C322.555908,206.115585 315.178192,225.026947 309.848175,244.630173 C308.943420,247.957825 308.434570,251.393112 307.657593,255.195663 C313.542969,254.619888 318.488892,252.237915 323.367828,249.979813 C349.922180,237.689682 373.513519,220.332184 398.689667,205.677872 C404.735718,202.158661 410.736023,198.560806 416.756622,194.997910 C418.301331,194.083786 420.054169,193.435623 421.493317,191.275452 C416.540955,187.558945 412.420441,183.033829 407.118011,179.912460 C406.001801,179.255356 404.408752,179.119293 404.330780,177.441574 C404.268768,176.107040 405.260773,175.344208 406.365570,174.861145 C408.144226,174.083496 409.183258,175.299988 410.151245,176.465485 C413.373962,180.345871 417.600586,183.119843 421.201508,186.571564 C423.955353,189.211319 426.552521,189.139709 429.766602,187.416504 C445.331543,179.071548 461.171722,171.313416 478.032471,165.860580 C497.386719,159.601334 517.114563,155.815796 537.343750,160.149857 C549.433777,162.740128 560.864563,167.559723 565.774231,180.416275 C569.912842,191.253464 566.424561,200.731033 558.788269,208.778687 C550.594177,217.414261 540.087585,221.857071 528.646667,224.299271 C500.902710,230.221512 475.642609,222.496536 451.366730,209.915756 C444.278992,206.242599 437.365875,202.166016 430.690887,197.789124 C426.979889,195.355789 424.113861,195.136322 420.278381,197.516541 C396.925201,212.009018 373.483948,226.361343 349.979401,240.607513 C337.436523,248.209778 324.609558,255.321411 310.322784,259.213715 C307.193359,260.066315 305.960571,261.714233 306.136322,264.904419 C306.300842,267.889893 306.253632,270.912292 305.977295,273.888550 C305.765930,276.164612 304.578186,278.149048 302.049835,278.410950 C299.455780,278.679718 298.130005,276.877075 297.460815,274.646729 C296.698578,272.106476 295.914246,269.582855 296.304779,266.818939 C299.246796,245.997482 304.931244,225.910141 312.257996,206.241379 C314.843811,199.299652 317.166718,192.259979 319.632904,185.198532 C317.355377,184.389847 316.042633,185.708939 314.667755,186.418640 C296.927399,195.576050 277.943573,200.127014 258.144043,201.153198 C252.896255,201.425186 250.612137,203.343430 249.178375,208.229431 C245.202850,221.777496 241.854263,235.523132 236.933914,248.784592 C235.249786,253.323654 233.367294,257.771606 229.770706,261.229980 C227.095367,263.802460 224.282440,263.666168 222.893570,260.377502 C218.646759,250.321747 218.118607,239.741821 219.680588,229.036057 C219.863739,227.780777 220.588699,226.459076 222.737793,226.746399 C223.527435,229.430969 224.377258,232.196243 223.732040,235.586182 M554.209900,172.247986 C538.248596,161.520096 520.431946,161.825363 502.675171,164.651840 C483.868286,167.645508 466.030029,174.264236 448.855560,182.503525 C442.623474,185.493301 435.997742,187.840393 430.766541,192.338593 C430.995300,194.098984 432.146820,194.637894 433.089233,195.231522 C458.472107,211.220779 484.726288,224.045212 516.108582,222.042831 C528.111572,221.276978 539.134033,218.526337 549.131714,212.218536 C565.870239,201.657700 567.784851,182.084351 554.209900,172.247986 M369.953705,127.456711 C373.471130,119.938972 377.387360,112.512627 375.179535,103.451027 C355.374176,120.175606 347.121002,143.632004 337.864380,166.535049 C351.338440,156.067719 361.554626,142.978729 369.953705,127.456711 M234.262680,196.347824 C245.245575,197.519562 247.122711,195.737366 247.913681,183.237000 C242.929535,186.913635 238.028915,190.532516 233.123535,194.144943 C231.616257,195.254913 231.109711,196.110687 234.262680,196.347824 z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg viewBox='110 92 463 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%237A1A63' d='M223.732040,235.586182 C223.599045,241.286926 224.972351,246.329849 226.219254,251.876175 C229.976105,246.536758 241.082458,211.209564 242.070511,201.891998 C237.290955,200.875015 232.508118,199.856995 227.339783,200.442062 C226.045609,202.419403 227.172577,206.583893 223.173431,206.037384 C219.367386,205.517258 221.222931,202.112198 220.573288,199.668335 C216.008575,197.397827 210.783386,197.623169 205.764877,196.803589 C187.488220,193.818817 169.138367,192.220001 150.668381,194.415695 C145.257874,195.058884 139.770630,196.124298 134.656387,197.945068 C126.752518,200.758972 117.848221,203.174789 119.385284,214.858826 C114.678658,213.030029 113.628685,209.192535 116.202980,204.743698 C119.463295,199.109314 125.160934,196.772339 130.838821,194.978012 C150.422318,188.789200 170.450470,188.874130 190.638596,191.234756 C199.375809,192.256439 208.137070,192.999069 216.787445,194.684509 C225.139679,196.311859 230.705765,190.438812 237.141663,186.935211 C237.430161,186.778152 237.649506,186.497314 237.932968,186.327301 C248.102051,180.227890 254.346237,171.661636 257.392395,159.904404 C259.959320,149.997009 264.685669,140.647964 268.475189,131.059265 C269.398987,128.721741 270.578949,126.525482 272.363190,124.706352 C273.730499,123.312363 275.319885,122.292419 277.249603,123.292419 C279.154083,124.279335 279.552032,126.268082 278.986328,128.077835 C277.846771,131.723312 276.513489,135.324417 275.012360,138.837982 C267.227600,157.059464 260.292267,175.598770 254.028778,194.392807 C253.882858,194.830612 253.955109,195.341141 253.930313,195.741425 C255.051178,197.101059 256.504669,196.669083 257.739807,196.584915 C278.707336,195.156052 298.740814,190.305374 317.427094,180.387283 C321.495697,178.227798 323.875488,175.170074 325.580841,170.868500 C333.933258,149.800583 342.634857,128.879059 356.422394,110.571770 C359.671661,106.257416 363.486725,102.556831 368.065979,99.741096 C370.825195,98.044525 373.737549,95.702873 377.147308,98.546402 C380.336090,101.205643 381.896027,104.614220 380.923492,108.744537 C377.264069,124.285896 369.661224,137.849625 359.610870,150.082092 C352.303497,158.976074 344.271881,167.181580 335.455322,174.627808 C331.707611,177.793045 331.128265,182.771149 329.546478,187.078735 C322.555908,206.115585 315.178192,225.026947 309.848175,244.630173 C308.943420,247.957825 308.434570,251.393112 307.657593,255.195663 C313.542969,254.619888 318.488892,252.237915 323.367828,249.979813 C349.922180,237.689682 373.513519,220.332184 398.689667,205.677872 C404.735718,202.158661 410.736023,198.560806 416.756622,194.997910 C418.301331,194.083786 420.054169,193.435623 421.493317,191.275452 C416.540955,187.558945 412.420441,183.033829 407.118011,179.912460 C406.001801,179.255356 404.408752,179.119293 404.330780,177.441574 C404.268768,176.107040 405.260773,175.344208 406.365570,174.861145 C408.144226,174.083496 409.183258,175.299988 410.151245,176.465485 C413.373962,180.345871 417.600586,183.119843 421.201508,186.571564 C423.955353,189.211319 426.552521,189.139709 429.766602,187.416504 C445.331543,179.071548 461.171722,171.313416 478.032471,165.860580 C497.386719,159.601334 517.114563,155.815796 537.343750,160.149857 C549.433777,162.740128 560.864563,167.559723 565.774231,180.416275 C569.912842,191.253464 566.424561,200.731033 558.788269,208.778687 C550.594177,217.414261 540.087585,221.857071 528.646667,224.299271 C500.902710,230.221512 475.642609,222.496536 451.366730,209.915756 C444.278992,206.242599 437.365875,202.166016 430.690887,197.789124 C426.979889,195.355789 424.113861,195.136322 420.278381,197.516541 C396.925201,212.009018 373.483948,226.361343 349.979401,240.607513 C337.436523,248.209778 324.609558,255.321411 310.322784,259.213715 C307.193359,260.066315 305.960571,261.714233 306.136322,264.904419 C306.300842,267.889893 306.253632,270.912292 305.977295,273.888550 C305.765930,276.164612 304.578186,278.149048 302.049835,278.410950 C299.455780,278.679718 298.130005,276.877075 297.460815,274.646729 C296.698578,272.106476 295.914246,269.582855 296.304779,266.818939 C299.246796,245.997482 304.931244,225.910141 312.257996,206.241379 C314.843811,199.299652 317.166718,192.259979 319.632904,185.198532 C317.355377,184.389847 316.042633,185.708939 314.667755,186.418640 C296.927399,195.576050 277.943573,200.127014 258.144043,201.153198 C252.896255,201.425186 250.612137,203.343430 249.178375,208.229431 C245.202850,221.777496 241.854263,235.523132 236.933914,248.784592 C235.249786,253.323654 233.367294,257.771606 229.770706,261.229980 C227.095367,263.802460 224.282440,263.666168 222.893570,260.377502 C218.646759,250.321747 218.118607,239.741821 219.680588,229.036057 C219.863739,227.780777 220.588699,226.459076 222.737793,226.746399 C223.527435,229.430969 224.377258,232.196243 223.732040,235.586182 M554.209900,172.247986 C538.248596,161.520096 520.431946,161.825363 502.675171,164.651840 C483.868286,167.645508 466.030029,174.264236 448.855560,182.503525 C442.623474,185.493301 435.997742,187.840393 430.766541,192.338593 C430.995300,194.098984 432.146820,194.637894 433.089233,195.231522 C458.472107,211.220779 484.726288,224.045212 516.108582,222.042831 C528.111572,221.276978 539.134033,218.526337 549.131714,212.218536 C565.870239,201.657700 567.784851,182.084351 554.209900,172.247986 M369.953705,127.456711 C373.471130,119.938972 377.387360,112.512627 375.179535,103.451027 C355.374176,120.175606 347.121002,143.632004 337.864380,166.535049 C351.338440,156.067719 361.554626,142.978729 369.953705,127.456711 M234.262680,196.347824 C245.245575,197.519562 247.122711,195.737366 247.913681,183.237000 C242.929535,186.913635 238.028915,190.532516 233.123535,194.144943 C231.616257,195.254913 231.109711,196.110687 234.262680,196.347824 z'/%3E%3C/svg%3E") center/contain no-repeat;}
+
+/* ---- Announce bar ---- */
+.announce_bar{background-color:#2B0A24;color:#FAF4EF;font-size:0.8125rem;letter-spacing:0.03em;text-align:center;padding:0.5625rem 1rem;}
+.announce_link{color:#fff;text-decoration:underline;text-underline-offset:0.1875rem;text-decoration-color:#C79A5B;}
+.announce_link:hover{text-decoration:underline;}
+
+/* ---- Navbar ---- */
+.nav_component{position:sticky;top:0;z-index:50;background-color:rgba(246,238,230,0.88);backdrop-filter:blur(0.875rem) saturate(140%);-webkit-backdrop-filter:blur(0.875rem) saturate(140%);border-bottom:1px solid #E8DDD4;transition:box-shadow 0.3s ease;}
+.nav_component.is-scrolled{box-shadow:0 0.875rem 2.125rem -1.625rem rgba(43,10,36,0.4);}
+.nav_container{display:flex;align-items:center;gap:1.375rem;min-height:5.25rem;padding-top:0.75rem;padding-bottom:0.75rem;}
+.brand_link{display:inline-flex;flex-direction:column;align-items:center;gap:0.125rem;flex-shrink:0;}
+.brand_mono_wrap{width:100%;flex-shrink:0;}
+.brand_mono_wrap .brand_mono{width:100%;color:#7A1A63;}
+.brand_wordmark{line-height:1;display:flex;flex-direction:column;align-items:center;gap:0.25rem;}
+.brand_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:1.0625rem;color:#7A1A63;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.brand_role_row{display:flex;align-items:center;gap:0.5rem;justify-content:center;}
+.brand_role_line{width:1.375rem;height:1px;background-color:#BF9B6F;border-radius:0;display:block;flex-shrink:0;}
+.brand_role_text{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.5rem;letter-spacing:0.32em;text-transform:uppercase;color:#BF9B6F;}
+.nav_menu{display:flex;gap:1.875rem;margin-left:auto;align-items:center;}
+.nav_link{font-family:'Mulish',system-ui,sans-serif;font-size:0.8125rem;letter-spacing:0.1em;text-transform:uppercase;color:#6B3A56;font-weight:600;padding-top:0.375rem;padding-bottom:0.375rem;transition:color 0.25s ease;position:relative;}
+.nav_link:hover{color:#90405A;}
+.nav_link.is-active{color:#90405A;}
+.nav_actions{display:flex;align-items:center;gap:0.875rem;flex-shrink:0;}
+.nav_cta_icon{width:1.1875rem;height:1.1875rem;display:block;}
+.nav_cta_text{line-height:1;}
+.lang_switcher{display:inline-flex;align-items:center;border:1.5px solid #DBBE98;border-radius:9999rem;overflow:hidden;}
+.lang_btn{background-color:transparent;border:none;cursor:pointer;font-family:'Mulish',system-ui,sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;padding:0.4375rem 0.8125rem;color:#6B3A56;transition:background-color 0.2s ease,color 0.2s ease;}
+.lang_btn.is-active{background-color:#2B0A24;color:#fff;}
+.nav_burger{display:none;flex-direction:column;gap:0.3125rem;background:none;border:0;cursor:pointer;padding:0.5rem;}
+.nav_burger_line{width:1.5rem;height:0.125rem;border-radius:0.125rem;background-color:#2B0A24;display:block;transition:transform 0.3s ease,opacity 0.3s ease;}
+
+/* ---- Page header ---- */
+.soins_hero{padding:0.875rem 0.875rem 0;}
+.soins_hero_inner{border-radius:2.75rem;overflow:hidden;background-color:#2B0A24;background-image:radial-gradient(120% 90% at 85% -10%,rgba(184,90,121,0.28) 0%,transparent 60%),radial-gradient(90% 80% at 0% 110%,rgba(199,154,91,0.20) 0%,transparent 55%);color:#FAF4EF;padding:clamp(3rem,8vw,5.5rem) clamp(2rem,6vw,4rem);}
+.soins_hero_eyebrow{color:#C79A5B;}
+.soins_hero_title{color:#fff;margin-top:0.875rem;font-size:clamp(2.25rem,5vw,3.5rem);}
+.soins_hero_lede{color:rgba(255,255,255,0.75);margin-top:1rem;max-width:52ch;font-size:1.0625rem;line-height:1.7;}
+
+/* ---- Services grid ---- */
+.soins_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.soins_card{background-color:#fff;border:1px solid #E8DDD4;border-radius:1.625rem;overflow:hidden;}
+.soins_card.is-full{grid-column:1/-1;}
+.soins_card_header{padding:1.375rem 1.5rem 1rem;border-bottom:1px solid #F0E6DC;}
+.soins_card_icon{width:2.5rem;height:2.5rem;border-radius:50%;background-color:#F5E0E8;color:#90405A;display:flex;align-items:center;justify-content:center;margin-bottom:0.875rem;}
+.soins_card_icon_svg{width:1.25rem;height:1.25rem;display:block;}
+.soins_card_title{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;color:#90405A;line-height:1.1;}
+.soins_card_title_he{font-family:'Frank Ruhl Libre',serif;font-size:0.875rem;color:#8F6230;margin-top:0.1875rem;font-weight:400;display:block;}
+.soins_card_body{padding:1rem 1.5rem 1.375rem;}
+.soins_line{display:flex;align-items:baseline;justify-content:space-between;gap:0.75rem;padding:0.4375rem 0;border-bottom:1px solid #F0E6DC;}
+.soins_line:last-child{border-bottom:0;}
+.soins_line_name{font-size:0.9375rem;color:#1E0619;line-height:1.4;}
+.soins_line_name_he{display:block;font-family:'Assistant',system-ui,sans-serif;font-size:0.75rem;color:#8B7080;margin-top:0.0625rem;}
+.soins_line_price{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#90405A;font-weight:600;white-space:nowrap;flex-shrink:0;}
+.soins_line_price.is-highlight{color:#7A1A63;background-color:#F5E0E8;padding:0.1875rem 0.5625rem;border-radius:9999rem;font-size:0.9375rem;}
+
+/* ---- Special offer ---- */
+.soins_offer{background:linear-gradient(135deg,#7A2040 0%,#2B0A24 100%);border-radius:1.625rem;padding:1.75rem 2rem;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+.soins_offer_label{font-family:'Mulish',system-ui,sans-serif;font-size:0.6875rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#C79A5B;margin-bottom:0.375rem;}
+.soins_offer_title{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#fff;line-height:1.1;}
+.soins_offer_detail{font-size:0.875rem;color:rgba(255,255,255,0.7);margin-top:0.5rem;line-height:1.5;}
+.soins_offer_price{font-family:'Playfair Display',Georgia,serif;font-size:3rem;color:#C79A5B;line-height:1;white-space:nowrap;flex-shrink:0;}
+.soins_offer_price small{font-size:1.25rem;opacity:0.8;}
+
+/* ---- CTA section ---- */
+.soins_cta_section{text-align:center;margin-top:4rem;}
+.soins_cta_title{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.5rem;color:#90405A;margin-bottom:1.5rem;}
+
+/* ---- Footer ---- */
+.footer_component{background-color:#2B0A24;color:#FAF4EF;border-radius:2.75rem 2.75rem 0 0;margin-top:0.875rem;}
+.footer_grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.footer_brand{text-align:center;}
+.footer_brand_inner{display:inline-flex;flex-direction:column;align-items:center;gap:0.25rem;}
+.footer_brand_mono_wrap{width:100%;margin-bottom:0.25rem;}
+.footer_brand_mono_wrap .brand_mono{width:100%;color:rgba(199,154,91,0.9);}
+.footer_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:1.375rem;color:#fff;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.footer_role{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.5rem;letter-spacing:0.32em;text-transform:uppercase;color:#BF9B6F;}
+.footer_desc{font-size:0.9375rem;color:#B89AAA;margin-top:1rem;max-width:34ch;line-height:1.6;}
+.footer_col_heading{font-family:'Mulish',system-ui,sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;color:#C79A5B;margin-bottom:1.125rem;}
+.footer_nav{display:flex;flex-direction:column;gap:0.6875rem;}
+.footer_nav_link{font-size:0.9375rem;color:#B89AAA;transition:color 0.2s ease;}
+.footer_nav_link:hover{color:#fff;}
+.footer_contact_item{display:flex;align-items:center;gap:0.625rem;color:#FAF4EF;margin-bottom:0.8125rem;font-size:0.9375rem;transition:color 0.2s ease;}
+.footer_contact_item:hover{color:#C79A5B;}
+.footer_contact_icon{width:1.125rem;height:1.125rem;color:#C79A5B;flex-shrink:0;display:block;}
+.footer_contact_icon_svg{width:100%;height:100%;display:block;}
+.footer_legal{margin-top:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.625rem;font-size:0.78rem;color:#B89AAA;}
+
+/* ---- FAB ---- */
+.fab_whatsapp{position:fixed;right:1.375rem;bottom:1.375rem;z-index:60;width:3.875rem;height:3.875rem;border-radius:50%;background-color:#1FB155;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform 0.25s ease;}
+.fab_whatsapp:hover{transform:scale(1.08);}
+.fab_whatsapp_icon{width:1.9375rem;height:1.9375rem;display:block;}
+
+/* ---- Responsive ---- */
+@media (max-width:991px){
+  .padding-global{padding-left:1.5rem;padding-right:1.5rem;}
+  .nav_menu{display:none;}
+  .nav_actions .button{display:none;}
+  .nav_burger{display:flex;margin-left:auto;}
+  .lang_switcher{order:-1;}
+  .nav_container{gap:1rem;}
+  .soins_grid{grid-template-columns:repeat(2,1fr);}
+  .footer_grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:767px){
+  .soins_grid{grid-template-columns:1fr;}
+  .soins_card.is-full{grid-column:auto;}
+  .footer_grid{grid-template-columns:1fr;}
+}
+@media (max-width:479px){
+  .padding-global{padding-left:1.25rem;padding-right:1.25rem;}
+  .brand_name{font-size:0.8125rem;letter-spacing:0.12em;}
+  .lang_btn{padding:0.3125rem 0.5625rem;font-size:0.6875rem;}
+  .nav_container{gap:0.5rem;}
+  .soins_offer{flex-direction:column;align-items:flex-start;}
+  .footer_legal{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ANNOUNCE BAR -->
+  <div class="announce_bar">
+    <span data-fr="Reçois uniquement sur rendez-vous — " data-he="קבלה בתיאום מראש בלבד — ">Reçois uniquement sur rendez-vous — </span><a class="announce_link" href="https://wa.me/972539513054" target="_blank" rel="noopener"><strong data-fr="Prenez RDV sur WhatsApp" data-he="קבעו תור בוואטסאפ">Prenez RDV sur WhatsApp</strong></a>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="nav_component" role="banner">
+    <div class="nav_container padding-global">
+      <a href="index.html" class="brand_link" aria-label="Hannah Guirchoun — Beauty Artist">
+        <div class="brand_mono_wrap"><div class="brand_mono"></div></div>
+        <div class="brand_wordmark">
+          <div class="brand_name">Hannah Guirchoun</div>
+          <div class="brand_role_row">
+            <div class="brand_role_line"></div>
+            <div class="brand_role_text" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
+            <div class="brand_role_line"></div>
+          </div>
+        </div>
+      </a>
+      <nav class="nav_menu" role="navigation">
+        <a href="index.html" class="nav_link" data-fr="Accueil" data-he="בית">Accueil</a>
+        <a href="index.html#about" class="nav_link" data-fr="À propos" data-he="אודות">À propos</a>
+        <a href="soins.html" class="nav_link is-active" data-fr="Soins" data-he="טיפולים">Soins</a>
+        <a href="index.html#gallery" class="nav_link" data-fr="Galerie" data-he="גלריה">Galerie</a>
+        <a href="index.html#gift" class="nav_link" data-fr="Carte cadeau" data-he="שובר מתנה">Carte cadeau</a>
+        <a href="index.html#visit" class="nav_link" data-fr="Contact" data-he="צור קשר">Contact</a>
+      </nav>
+      <div class="nav_actions">
+        <div class="lang_switcher" role="group" aria-label="Langue">
+          <button class="lang_btn is-active" data-lang="fr">FR</button>
+          <button class="lang_btn" data-lang="he">עברית</button>
+        </div>
+        <a class="button is-wa" href="https://wa.me/972539513054" target="_blank" rel="noopener">
+          <div class="button_icon w-embed">
+            <svg class="nav_cta_icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.876-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </div>
+          <div class="button_text nav_cta_text" data-fr="Prendre RDV" data-he="קביעת תור">Prendre RDV</div>
+        </a>
+      </div>
+      <div class="nav_burger">
+        <div class="nav_burger_line"></div>
+        <div class="nav_burger_line"></div>
+        <div class="nav_burger_line"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-wrapper">
+
+    <!-- PAGE HEADER -->
+    <section class="soins_hero">
+      <div class="soins_hero_inner padding-global reveal">
+        <div class="eyebrow soins_hero_eyebrow">
+          <div class="eyebrow_line"></div>
+          <span data-fr="Institut de beauté · Jérusalem" data-he="מכון יופי · ירושלים">Institut de beauté · Jérusalem</span>
+          <div class="eyebrow_line"></div>
+        </div>
+        <h1 class="soins_hero_title" data-fr="Mes soins" data-he="הטיפולים שלי">Mes soins</h1>
+        <p class="soins_hero_lede" data-fr="Toutes les prestations, détaillées et tarifées. Prenez rendez-vous directement sur WhatsApp — je m'adapte à votre disponibilité." data-he="כל השירותים, מפורטים עם המחירים. קבעו תור ישירות בוואטסאפ — אני מתאימה לזמינות שלכם.">Toutes les prestations, détaillées et tarifées. Prenez rendez-vous directement sur WhatsApp — je m'adapte à votre disponibilité.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="padding-global padding-section-medium">
+      <div class="container-large">
+
+        <div class="soins_grid">
+
+          <!-- Épilation à la cire -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c0 0-4 4-4 9s4 9 4 9 4-4 4-9-4-9-4-9z"/><path d="M3 12h18"/></svg></div>
+              </div>
+              <div class="soins_card_title" data-fr="Épilation à la cire" data-he="הסרת שיער בשעווה">Épilation à la cire</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">שעווה</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Menton" data-he="סנטר">Menton</span><span class="soins_line_name_he" data-fr="" data-he="סנטר">סנטר</span></div>
+                <div class="soins_line_price">20 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Lèvre supérieure" data-he="שפם">Lèvre supérieure</span><span class="soins_line_name_he" data-fr="" data-he="שפם">שפם</span></div>
+                <div class="soins_line_price">20 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Sourcils" data-he="גבות">Sourcils</span><span class="soins_line_name_he" data-fr="" data-he="גבות">גבות</span></div>
+                <div class="soins_line_price">30 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Ligne du ventre" data-he="פס בטן">Ligne du ventre</span><span class="soins_line_name_he" data-fr="" data-he="פס בטן">פס בטן</span></div>
+                <div class="soins_line_price">10 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Ventre complet" data-he="בטן שלמה">Ventre complet</span><span class="soins_line_name_he" data-fr="" data-he="בטן שלמה">בטן שלמה</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Aisselles" data-he="בית שחי">Aisselles</span><span class="soins_line_name_he" data-fr="" data-he="בית שחי">בית שחי</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Demi-bras" data-he="חצי יד">Demi-bras</span><span class="soins_line_name_he" data-fr="" data-he="חצי יד">חצי יד</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Bras complet" data-he="יד שלמה">Bras complet</span><span class="soins_line_name_he" data-fr="" data-he="יד שלמה">יד שלמה</span></div>
+                <div class="soins_line_price">60 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Maillot partiel" data-he="מפשעות חלקי">Maillot partiel</span><span class="soins_line_name_he" data-fr="" data-he="מפשעות חלקי">מפשעות חלקי</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Maillot brésilien" data-he="מפשעות מלא">Maillot brésilien</span><span class="soins_line_name_he" data-fr="" data-he="מפשעות מלא">מפשעות מלא</span></div>
+                <div class="soins_line_price">80 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Demi-jambe" data-he="חצי רגל">Demi-jambe</span><span class="soins_line_name_he" data-fr="" data-he="חצי רגל">חצי רגל</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Jambes complètes" data-he="רגליים">Jambes complètes</span><span class="soins_line_name_he" data-fr="" data-he="רגליים">רגליים</span></div>
+                <div class="soins_line_price">80 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Dos" data-he="גב">Dos</span><span class="soins_line_name_he" data-fr="" data-he="גב">גב</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soins du visage -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-4 4-7 9-7s9 3 9 7"/></svg></div>
+              </div>
+              <div class="soins_card_title" data-fr="Soins du visage" data-he="טיפולי פנים">Soins du visage</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">טיפול פנים</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Hyper-pigmentation" data-he="היפר-פיגמנטציה">Hyper-pigmentation</span><span class="soins_line_name_he" data-fr="" data-he="היפר-פיגמנטציה">היפר-פיגמנטציה</span></div>
+                <div class="soins_line_price">280 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Éclaircissement du teint" data-he="להבהרת גוון העור">Éclaircissement du teint</span><span class="soins_line_name_he" data-fr="" data-he="להבהרת גוון העור">להבהרת גוון העור</span></div>
+                <div class="soins_line_price">280 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Anti-acné" data-he="טיפול לאקנה">Anti-acné</span><span class="soins_line_name_he" data-fr="" data-he="טיפול לאקנה">טיפול לאקנה</span></div>
+                <div class="soins_line_price">280 ₪</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cils et Sourcils -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 12c2-4 5-6 10-6s8 2 10 6"/><path d="M12 6v2M8 7l1 2M16 7l-1 2"/></svg></div>
+              </div>
+              <div class="soins_card_title" data-fr="Cils et Sourcils" data-he="ריסים וגבות">Cils et Sourcils</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">ריסים וגבות</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Teinture cils" data-he="צבע ריסים">Teinture cils</span><span class="soins_line_name_he" data-fr="" data-he="צבע ריסים">צבע ריסים</span></div>
+                <div class="soins_line_price">40 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Teinture sourcils" data-he="צבע גבות">Teinture sourcils</span><span class="soins_line_name_he" data-fr="" data-he="צבע גבות">צבע גבות</span></div>
+                <div class="soins_line_price">30 ₪</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mains -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10V5a2 2 0 0 0-4 0v9M6 14v-1a2 2 0 0 0-2-2H3v6a5 5 0 0 0 5 5h5a5 5 0 0 0 5-5v-4a2 2 0 0 0-2-2h-1"/></svg></div>
+              </div>
+              <div class="soins_card_title" data-fr="Mains &amp; Manucure" data-he="ידיים ומניקור">Mains &amp; Manucure</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">ידיים</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Manucure" data-he="מניקור">Manucure</span><span class="soins_line_name_he" data-fr="" data-he="מניקור">מניקור</span></div>
+                <div class="soins_line_price">50 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Manucure gel" data-he="מניקור ג'ל">Manucure gel</span><span class="soins_line_name_he" data-fr="" data-he="מניקור ג'ל">מניקור ג'ל</span></div>
+                <div class="soins_line_price is-highlight">140 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Pose d'ongles (faux ongles)" data-he="בנייה">Pose d'ongles (faux ongles)</span><span class="soins_line_name_he" data-fr="" data-he="בנייה">בנייה</span></div>
+                <div class="soins_line_price is-highlight">250 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Retrait gel" data-he="הסרת ג'ל">Retrait gel</span><span class="soins_line_name_he" data-fr="" data-he="הסרת ג'ל">הסרת ג'ל</span></div>
+                <div class="soins_line_price">30 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Soin paraffine" data-he="טיפול פארפין">Soin paraffine</span><span class="soins_line_name_he" data-fr="" data-he="טיפול פארפין">טיפול פארפין</span></div>
+                <div class="soins_line_price">50 ₪</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pieds -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 18c0 2.5 2 4 4 4s4-1.5 4-4V8c0-2.5-2-4-4-4S8 5.5 8 8v10z"/><circle cx="10" cy="9" r="1" fill="currentColor" stroke="none"/></svg></div>
+              </div>
+              <div class="soins_card_title" data-fr="Pieds &amp; Pédicure" data-he="רגליים ופדיקור">Pieds &amp; Pédicure</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">רגליים</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Pédicure" data-he="פדיקור">Pédicure</span><span class="soins_line_name_he" data-fr="" data-he="פדיקור">פדיקור</span></div>
+                <div class="soins_line_price">150 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Pédicure gel" data-he="פדיקור ג'ל">Pédicure gel</span><span class="soins_line_name_he" data-fr="" data-he="פדיקור ג'ל">פדיקור ג'ל</span></div>
+                <div class="soins_line_price is-highlight">200 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Mini pédicure gel" data-he="מיני פדיקור ג'ל">Mini pédicure gel</span><span class="soins_line_name_he" data-fr="" data-he="מיני פדיקור ג'ל">מיני פדיקור ג'ל</span></div>
+                <div class="soins_line_price">120 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Ponçage + vernis" data-he="שיוף ולק">Ponçage + vernis</span><span class="soins_line_name_he" data-fr="" data-he="שיוף ולק">שיוף ולק</span></div>
+                <div class="soins_line_price">50 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Retrait gel" data-he="הסרת ג'ל">Retrait gel</span><span class="soins_line_name_he" data-fr="" data-he="הסרת ג'ל">הסרת ג'ל</span></div>
+                <div class="soins_line_price">20 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Soin paraffine" data-he="טיפול פארפין">Soin paraffine</span><span class="soins_line_name_he" data-fr="" data-he="טיפול פארפין">טיפול פארפין</span></div>
+                <div class="soins_line_price">60 ₪</div>
+              </div>
+              <div class="soins_line">
+                <div class="soins_line_name"><span data-fr="Massage des pieds · 30 min" data-he="עיסוי רגליים · 30 דק׳">Massage des pieds · 30 min</span><span class="soins_line_name_he" data-fr="" data-he="עיסוי רגליים · 30 דק׳">עיסוי רגליים · 30 דק׳</span></div>
+                <div class="soins_line_price">100 ₪</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offre spéciale corps entier -->
+          <div class="soins_card reveal">
+            <div class="soins_card_header">
+              <div class="soins_card_icon" style="background-color:#FDF3D8;">
+                <div class="w-embed"><svg class="soins_card_icon_svg" viewBox="0 0 24 24" fill="none" stroke="#C79A5B" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              </div>
+              <div class="soins_card_title" style="color:#8F6230;" data-fr="Offre Corps entier" data-he="מבצע כל הגוף">Offre Corps entier</div>
+              <span class="soins_card_title_he" data-fr="" data-he="">מבצע מיוחד</span>
+            </div>
+            <div class="soins_card_body">
+              <div class="soins_offer">
+                <div>
+                  <div class="soins_offer_label" data-fr="Forfait tout inclus" data-he="חבילה כוללת">Forfait tout inclus</div>
+                  <div class="soins_offer_title" data-fr="Corps entier" data-he="כל הגוף">Corps entier</div>
+                  <div class="soins_offer_detail" data-fr="Jambes complètes · Maillot brésilien · Aisselles · Demi-bras" data-he="רגליים מלאות · מפשעות מלא · בית שחי · חצי יד">Jambes complètes · Maillot brésilien · Aisselles · Demi-bras</div>
+                </div>
+                <div class="soins_offer_price">200<small> ₪</small></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="soins_cta_section reveal">
+          <p class="soins_cta_title" data-fr="Prête à prendre soin de vous ?" data-he="מוכנות לפנק את עצמכן?">Prête à prendre soin de vous ?</p>
+          <a class="button is-wa is-large" href="https://wa.me/972539513054" target="_blank" rel="noopener">
+            <div class="button_icon w-embed"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="19" height="19"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.876-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></div>
+            <div class="button_text" data-fr="Prendre rendez-vous sur WhatsApp" data-he="קביעת תור בוואטסאפ">Prendre rendez-vous sur WhatsApp</div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer_component">
+    <div class="padding-global padding-section-small">
+      <div class="container-large">
+        <div class="footer_grid">
+          <div class="footer_brand">
+            <div class="footer_brand_inner">
+              <div class="footer_brand_mono_wrap"><div class="brand_mono"></div></div>
+              <div class="footer_name">Hannah Guirchoun</div>
+              <div class="footer_role" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
+            </div>
+          </div>
+          <div>
+            <a href="https://wa.me/972539513054" target="_blank" rel="noopener" class="footer_contact_item">
+              <div class="footer_contact_icon"><div class="w-embed"><svg class="footer_contact_icon_svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.876-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></div></div>
+              <span dir="ltr">+972 53-951-3054</span>
+            </a>
+            <a href="https://instagram.com/hannah_esthetique" target="_blank" rel="noopener" class="footer_contact_item">
+              <div class="footer_contact_icon"><div class="w-embed"><svg class="footer_contact_icon_svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.12 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></div></div>
+              <span>@hannah_esthetique</span>
+            </a>
+            <a href="https://maps.google.com/?q=Borochov+59+Jerusalem" target="_blank" rel="noopener" class="footer_contact_item">
+              <div class="footer_contact_icon"><div class="w-embed"><svg class="footer_contact_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div></div>
+              <span data-fr="Borochov 59, Jérusalem" data-he="בורוכוב 59, ירושלים">Borochov 59, Jérusalem</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer_legal">
+          <span>© <span id="yr"></span> Hannah Guirchoun · Beauty Artist</span>
+          <span data-fr="Reçue uniquement sur rendez-vous" data-he="קבלה בתיאום מראש בלבד">Reçue uniquement sur rendez-vous</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB WHATSAPP -->
+  <a class="fab_whatsapp" href="https://wa.me/972539513054" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <div class="w-embed"><svg class="fab_whatsapp_icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.512 5.26l-.999 3.648 3.876-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></div>
+  </a>
+
+  <div class="w-embed"><style>
+    .nav_component.is-menu-open .nav_menu {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; background-color: #F6EEE6;
+      padding: 1.375rem 1.75rem; gap: 1.125rem;
+      border-bottom: 1px solid #D9CABB;
+      box-shadow: 0 0.875rem 2.125rem -1.625rem rgba(43,10,36,0.4); z-index: 100;
+    }
+    .nav_component.is-menu-open .nav_menu .nav_link { font-size: 0.9375rem; }
+    html[dir="rtl"] body { font-family: "Assistant", system-ui, sans-serif; }
+    html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 { font-family: "Frank Ruhl Libre", serif; }
+    html[dir="rtl"] .nav_menu { margin-left: 0; margin-right: auto; }
+    html[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+    html[dir="rtl"] .brand_role_row { flex-direction: row-reverse; }
+    html[dir="rtl"] .footer_nav { align-items: flex-end; }
+    html[dir="rtl"] .footer_contact_item { flex-direction: row-reverse; }
+    html[dir="rtl"] .soins_line { flex-direction: row-reverse; }
+    html[dir="rtl"] .soins_line_name_he { display: none; }
+    .reveal { opacity: 0; transform: translateY(1.625rem); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  </style></div>
+
+</div>
+
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+(function() {
+  var STORE = "hg-lang";
+  function getLang() { try { return localStorage.getItem(STORE) || "fr"; } catch(e) { return "fr"; } }
+
+  function applyLang(l) {
+    var html = document.documentElement;
+    html.setAttribute("lang", l === "he" ? "he" : "fr");
+    html.setAttribute("dir", l === "he" ? "rtl" : "ltr");
+    document.querySelectorAll("[data-fr]").forEach(function(el) {
+      var v = l === "he" ? el.getAttribute("data-he") : el.getAttribute("data-fr");
+      if (v !== null && v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll(".lang_btn").forEach(function(b) {
+      b.classList.toggle("is-active", b.getAttribute("data-lang") === l);
+    });
+    try { localStorage.setItem(STORE, l); } catch(e) {}
+  }
+
+  function initNav() {
+    var nav = document.querySelector(".nav_component");
+    if (!nav) return;
+    window.addEventListener("scroll", function() {
+      nav.classList.toggle("is-scrolled", window.scrollY > 12);
+    }, { passive: true });
+    var burger = nav.querySelector(".nav_burger");
+    if (burger) {
+      burger.addEventListener("click", function() { nav.classList.toggle("is-menu-open"); });
+      nav.querySelectorAll(".nav_link").forEach(function(a) {
+        a.addEventListener("click", function() { nav.classList.remove("is-menu-open"); });
+      });
+    }
+  }
+
+  function initReveal() {
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function(el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add("is-visible"); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function(el) { obs.observe(el); });
+  }
+
+  applyLang(getLang());
+  document.querySelectorAll(".lang_btn").forEach(function(btn) {
+    btn.addEventListener("click", function() { applyLang(btn.getAttribute("data-lang")); });
+  });
+  initNav();
+  initReveal();
+})();
+</script>
+
+</body>
+</html>
