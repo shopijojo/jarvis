@@ -239,15 +239,12 @@ p{font-size:1rem;line-height:1.72;}
    ================================================================ */
 .gallery_header{max-width:62ch;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:2.625rem;}
 .gallery_heading{margin-top:1rem;}
-.gallery_fanstage{position:relative;overflow:hidden;}
-.gallery_fanstage_inner{position:relative;height:22rem;perspective:1100px;display:flex;align-items:flex-end;justify-content:center;overflow:visible;}
-.gallery_card{position:absolute;bottom:0;width:20rem;height:14rem;border-radius:1.125rem;overflow:hidden;will-change:transform;border:3px solid rgba(43,10,36,0.14);box-shadow:0 1.5rem 3rem -0.75rem rgba(43,10,36,0.32);transform-origin:bottom center;transition:transform 0.42s cubic-bezier(0.34,1.26,0.64,1),opacity 0.3s ease;opacity:1;}
-.gallery_card.is-active{cursor:grab;}
-.gallery_card_img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.gallery_card_placeholder{position:absolute;inset:0;width:100%;height:100%;}
-.gallery_dots{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.5rem;}
-.gallery_dot{width:0.5rem;height:0.5rem;border-radius:50%;background-color:rgba(43,10,36,0.22);border:none;cursor:pointer;transition:background-color 0.25s ease,transform 0.25s ease;padding:0;flex-shrink:0;}
-.gallery_dot.is-active{background-color:#2B0A24;transform:scale(1.4);}
+.gallery_scroll_outer{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%);}
+.gallery_scroll_track{display:flex;gap:0.875rem;width:max-content;animation:gallery-scroll 30s linear infinite;}
+.gallery_scroll_track:hover{animation-play-state:paused;}
+.gallery_scroll_item{flex-shrink:0;width:10.5rem;height:14rem;border-radius:1.125rem;overflow:hidden;border:2px solid rgba(43,10,36,0.10);box-shadow:0 0.75rem 2rem -0.5rem rgba(43,10,36,0.16);background-color:#EDE3D9;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.gallery_scroll_item:hover{transform:scale(1.04);box-shadow:0 1.5rem 3rem -0.75rem rgba(43,10,36,0.28);}
+.gallery_scroll_img{width:100%;height:100%;object-fit:contain;display:block;background-color:#EDE3D9;}
 .gallery_more{text-align:center;margin-top:2.25rem;}
 
 /* ================================================================
@@ -352,8 +349,7 @@ p{font-size:1rem;line-height:1.72;}
   .about_seal{right:-0.75rem;}
   .why_grid{grid-template-columns:repeat(2,1fr);gap:1.875rem 1.375rem;}
   .services_grid{grid-template-columns:repeat(3,1fr);}
-  .gallery_fanstage_inner{height:20rem;}
-  .gallery_card{width:17rem;height:12rem;}
+  .gallery_scroll_item{width:9rem;height:12rem;}
   .gift_grid{grid-template-columns:1fr;}
   .testimonials_column.is-col-last{display:none;}
   .visit_grid{grid-template-columns:1fr 1fr;}
@@ -363,8 +359,7 @@ p{font-size:1rem;line-height:1.72;}
   h1{font-size:2.25rem;}
   h2{font-size:1.875rem;}
   .services_grid{grid-template-columns:repeat(2,1fr);}
-  .gallery_fanstage_inner{height:17rem;}
-  .gallery_card{width:14rem;height:10rem;}
+  .gallery_scroll_item{width:8.5rem;height:11.25rem;}
   .hero_cta{flex-direction:column;}
 }
 @media (max-width:479px){
@@ -375,8 +370,7 @@ p{font-size:1rem;line-height:1.72;}
   h1{font-size:2rem;}
   .why_grid{grid-template-columns:1fr;}
   .services_grid{grid-template-columns:1fr 1fr;}
-  .gallery_fanstage_inner{height:13rem;}
-  .gallery_card{width:11rem;height:7.5rem;}
+  .gallery_scroll_item{width:7.5rem;height:10rem;}
   .testimonials_column.is-col-mid{display:none;}
   .testimonials_scroll{max-height:22rem;}
   .testimonial_card{padding:1rem 1.125rem;}
@@ -626,22 +620,40 @@ p{font-size:1rem;line-height:1.72;}
             </div>
             <h2 class="gallery_heading" data-fr="Mes réalisations" data-he="העבודות שלי">Mes réalisations</h2>
           </div>
-          <div class="gallery_fanstage reveal">
-            <div class="gallery_fanstage_inner">
-              <div class="gallery_card"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_card_img"></div>
-              <div class="gallery_card"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_card_img"></div>
-              <div class="gallery_card"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_card_img"></div>
-              <div class="gallery_card"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_card_img"></div>
-              <div class="gallery_card"><div class="img-placeholder gallery_card_placeholder"><div class="img-placeholder_label" data-fr="Photo 5" data-he="תמונה 5">Photo 5</div></div></div>
-              <div class="gallery_card"><div class="img-placeholder gallery_card_placeholder"><div class="img-placeholder_label" data-fr="Photo 6" data-he="תמונה 6">Photo 6</div></div></div>
-            </div>
-            <div class="gallery_dots">
-              <button class="gallery_dot is-active" aria-label="Photo 1"></button>
-              <button class="gallery_dot" aria-label="Photo 2"></button>
-              <button class="gallery_dot" aria-label="Photo 3"></button>
-              <button class="gallery_dot" aria-label="Photo 4"></button>
-              <button class="gallery_dot" aria-label="Photo 5"></button>
-              <button class="gallery_dot" aria-label="Photo 6"></button>
+          <div class="gallery_scroll_outer reveal">
+            <div class="gallery_scroll_track">
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-1.jpeg" alt="French manucure noire à pois" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-2.jpeg" alt="Manucure bordeaux avec glitter" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-3.jpeg" alt="Manucure violet léopard" class="gallery_scroll_img" loading="lazy"></div>
+              <div class="gallery_scroll_item"><img src="galerie-4.jpeg" alt="Manucure nude texturé" class="gallery_scroll_img" loading="lazy"></div>
             </div>
           </div>
           <div class="gallery_more reveal">
@@ -1116,6 +1128,7 @@ p{font-size:1rem;line-height:1.72;}
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
     @keyframes scroll-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
     @keyframes aurora-shift { from { background-position: 50% 50%, 50% 50%; } to { background-position: 350% 50%, 250% 50%; } }
+    @keyframes gallery-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   </style></div>
 
 </div>
