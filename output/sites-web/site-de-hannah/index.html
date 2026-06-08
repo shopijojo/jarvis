@@ -103,13 +103,10 @@ p{font-size:1rem;line-height:1.72;}
 
 /* Section themes */
 .section-style-dark{background-color:#2B0A24;background-image:radial-gradient(120% 90% at 85% -10%,rgba(184,90,121,0.28) 0%,transparent 60%),radial-gradient(90% 80% at 0% 110%,rgba(199,154,91,0.20) 0%,transparent 55%);color:#FAF4EF;border-radius:2.75rem;}
-.section-style-soft{background-color:#EDE3D9;}
+.section-style-soft{background-color:#EDE3D9;border-radius:2.75rem;}
 .section-style-rose{background-color:#F5E0E8;}
-.section-style-salon{background-image:linear-gradient(rgba(43,10,36,0.78),rgba(43,10,36,0.78)),url('salon-hannah.png');background-size:cover;background-position:center;color:#FAF4EF;}
-.section_services .eyebrow{color:rgba(199,154,91,0.9);}
-.section_services .eyebrow_line{background-color:rgba(199,154,91,0.65);}
-.section_services .services_heading{color:#FAF4EF;}
-.section_services .lede{color:rgba(250,244,239,0.75);}
+.section_services{overflow:hidden;}
+.why_inner{background-image:linear-gradient(rgba(43,10,36,0.82),rgba(43,10,36,0.82)),url('salon-hannah.png');background-size:cover;background-position:center;}
 
 /* Reveal animation */
 .reveal{opacity:0;transform:translateY(1.625rem);transition:opacity 0.8s ease,transform 0.8s ease;}
@@ -582,7 +579,7 @@ p{font-size:1rem;line-height:1.72;}
 
     <!-- SERVICES -->
     <section class="section_services" id="services">
-      <div class="padding-global padding-section-medium section-style-salon">
+      <div class="padding-global padding-section-medium section-style-soft">
         <div class="container-large">
           <div class="services_header reveal">
             <div class="eyebrow">
