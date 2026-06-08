@@ -185,7 +185,9 @@ p{font-size:1rem;line-height:1.72;}
 /* ================================================================
    QUOTE RIBBON
    ================================================================ */
-.section_quote{text-align:center;padding-bottom:0;}
+.section_quote{text-align:center;}
+.section_quote .padding-section-medium{padding-top:3rem;padding-bottom:1.5rem;}
+.section_about .padding-section-medium{padding-top:1.5rem;}
 .quote_text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.5rem,3.5vw,2.25rem);color:#90405A;max-width:24ch;margin-left:auto;margin-right:auto;line-height:1.32;}
 .quote_sig{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;color:#C79A5B;margin-top:1rem;}
 
@@ -491,7 +493,7 @@ p{font-size:1rem;line-height:1.72;}
       <div class="padding-global padding-section-medium">
         <div class="container-large">
           <p class="quote_text reveal" data-fr="« Tout est plus beau quand on se sent bien. »" data-he="« הכי יפה כשמרגישים טוב. »">« Tout est plus beau quand on se sent bien. »</p>
-          <span class="quote_sig reveal">Hannah</span>
+          <span class="quote_sig reveal">#Hannah</span>
         </div>
       </div>
     </section>
@@ -540,28 +542,28 @@ p{font-size:1rem;line-height:1.72;}
             <h2 class="why_heading" data-fr="Une parenthèse rien que pour vous" data-he="הפוגה רק בשבילך">Une parenthèse rien que pour vous</h2>
           </div>
           <div class="why_grid">
-            <div class="reason_card reveal">
+            <div class="reason_card reveal-right">
               <div class="reason_icon">
                 <div class="w-embed"><svg class="reason_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l3 5-9 13L3 8z"/><path d="M3 8h18M9 3l-3 5 6 13 6-13-3-5"/></svg></div>
               </div>
               <h3 class="reason_title" data-fr="Un vrai savoir-faire" data-he="מקצועיות אמיתית">Un vrai savoir-faire</h3>
               <p class="reason_desc" data-fr="Plus de 10 ans d'expérience, pour des résultats précis et durables." data-he="יותר מ-10 שנות ניסיון, לתוצאות מדויקות ומתמשכות.">Plus de 10 ans d'expérience, pour des résultats précis et durables.</p>
             </div>
-            <div class="reason_card reveal">
+            <div class="reason_card reveal-left">
               <div class="reason_icon">
                 <div class="w-embed"><svg class="reason_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c.6 5 1.4 5.8 6 6.5-4.6.7-5.4 1.5-6 6.5-.6-5-1.4-5.8-6-6.5 4.6-.7 5.4-1.5 6-6.5z"/><path stroke-linecap="round" d="M18.5 15.5c.3 2 .6 2.3 2.5 2.7-1.9.4-2.2.7-2.5 2.8-.3-2.1-.6-2.4-2.5-2.8 1.9-.4 2.2-.7 2.5-2.7z"/></svg></div>
               </div>
               <h3 class="reason_title" data-fr="Des soins sur-mesure" data-he="טיפולים בהתאמה אישית">Des soins sur-mesure</h3>
               <p class="reason_desc" data-fr="Visage, épilation, mains et pieds — chaque soin adapté à votre peau." data-he="פנים, הסרת שיער, ידיים ורגליים — כל טיפול מותאם לעור שלך.">Visage, épilation, mains et pieds — chaque soin adapté à votre peau.</p>
             </div>
-            <div class="reason_card reveal">
+            <div class="reason_card reveal-right">
               <div class="reason_icon">
                 <div class="w-embed"><svg class="reason_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M20 4S8 3 5 11s3 9 3 9 9-3 11-9c1.3-4-.4-7 1-7z"/><path stroke-linecap="round" d="M7 17C11 13 14 10 18 7"/></svg></div>
               </div>
               <h3 class="reason_title" data-fr="Un cadre apaisant" data-he="סביבה מרגיעה">Un cadre apaisant</h3>
               <p class="reason_desc" data-fr="Un institut intime et calme, où l'on prend vraiment le temps." data-he="מכון אינטימי ושקט, שבו באמת לוקחים את הזמן.">Un institut intime et calme, où l'on prend vraiment le temps.</p>
             </div>
-            <div class="reason_card reveal">
+            <div class="reason_card reveal-left">
               <div class="reason_icon">
                 <div class="w-embed"><svg class="reason_icon_svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.4 12 20 12 20z"/></svg></div>
               </div>
@@ -1159,8 +1161,12 @@ p{font-size:1rem;line-height:1.72;}
     @media (max-width: 767px) {
       html[dir="rtl"] .hero_cta { flex-direction: column; }
     }
-    .reveal { opacity: 0; transform: translateY(1.625rem); }
+    .reveal { opacity: 0; transform: translateY(1.625rem); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-right { opacity: 0; transform: translateX(3rem); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+    .reveal-left { opacity: 0; transform: translateX(-3rem); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
     @keyframes scroll-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
     @keyframes aurora-shift { from { background-position: 50% 50%, 50% 50%; } to { background-position: 350% 50%, 250% 50%; } }
     @keyframes gallery-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -1216,7 +1222,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   }
 
   function initReveal() {
-    var els = document.querySelectorAll(".reveal");
+    var els = document.querySelectorAll(".reveal, .reveal-right, .reveal-left");
     if (!("IntersectionObserver" in window) || !els.length) {
       els.forEach(function(el) { el.classList.add("is-visible"); });
       return;
