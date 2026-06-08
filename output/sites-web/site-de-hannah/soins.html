@@ -52,18 +52,17 @@ p{font-size:1rem;line-height:1.72;}
 
 /* ---- Announce bar ---- */
 .announce_bar{background-color:#2B0A24;color:#FAF4EF;font-size:0.8125rem;letter-spacing:0.03em;text-align:center;padding:0.5625rem 1rem;}
-.announce_link{color:#fff;text-decoration:underline;text-underline-offset:0.1875rem;text-decoration-color:#C79A5B;}
-.announce_link:hover{text-decoration:underline;}
+.announce_rdv{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:0.875rem;letter-spacing:0.04em;color:rgba(199,154,91,0.9);}
 
 /* ---- Navbar ---- */
 .nav_component{position:sticky;top:0;z-index:50;background-color:rgba(246,238,230,0.88);backdrop-filter:blur(0.875rem) saturate(140%);-webkit-backdrop-filter:blur(0.875rem) saturate(140%);border-bottom:1px solid #E8DDD4;transition:box-shadow 0.3s ease;}
 .nav_component.is-scrolled{box-shadow:0 0.875rem 2.125rem -1.625rem rgba(43,10,36,0.4);}
-.nav_container{display:flex;align-items:center;gap:1.375rem;min-height:5.25rem;padding-top:0.75rem;padding-bottom:0.75rem;}
-.brand_link{display:inline-flex;flex-direction:column;align-items:center;gap:0.125rem;flex-shrink:0;}
+.nav_container{display:flex;align-items:center;gap:1.375rem;min-height:4rem;padding-top:0.5rem;padding-bottom:0.5rem;}
+.brand_link{display:inline-flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0;}
 .brand_mono_wrap{width:100%;flex-shrink:0;}
 .brand_mono_wrap .brand_mono{width:100%;color:#7A1A63;}
 .brand_wordmark{line-height:1;display:flex;flex-direction:column;align-items:center;gap:0.25rem;}
-.brand_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:0.9375rem;color:#7A1A63;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.brand_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:0.8125rem;color:#7A1A63;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
 .brand_role_row{display:flex;align-items:center;gap:0.5rem;justify-content:center;}
 .brand_role_line{width:1.375rem;height:1px;background-color:#BF9B6F;border-radius:0;display:block;flex-shrink:0;}
 .brand_role_text{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.5rem;letter-spacing:0.32em;text-transform:uppercase;color:#BF9B6F;}
@@ -120,11 +119,13 @@ p{font-size:1rem;line-height:1.72;}
 .footer_component{background-color:#2B0A24;color:#FAF4EF;border-radius:2.75rem 2.75rem 0 0;margin-top:0.875rem;}
 .footer_grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
 .footer_brand{text-align:center;}
-.footer_brand_inner{display:inline-flex;flex-direction:column;align-items:center;gap:0.25rem;}
-.footer_brand_mono_wrap{width:100%;margin-bottom:0.25rem;}
+.footer_brand_inner{display:inline-flex;flex-direction:column;align-items:center;gap:0.125rem;}
+.footer_brand_mono_wrap{width:100%;margin-bottom:0.125rem;}
 .footer_brand_mono_wrap .brand_mono{width:100%;color:rgba(199,154,91,0.9);}
-.footer_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:0.75rem;color:#fff;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
-.footer_role{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.4375rem;letter-spacing:0.32em;text-transform:uppercase;color:#BF9B6F;}
+.footer_name{font-family:'EB Garamond',Garamond,Georgia,serif;font-weight:700;font-style:normal;font-size:0.625rem;color:#fff;letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.footer_role_row{display:flex;align-items:center;gap:0.4375rem;justify-content:center;}
+.footer_role_line{width:1rem;height:1px;background-color:#BF9B6F;display:block;flex-shrink:0;}
+.footer_role{font-family:'Mulish',system-ui,sans-serif;font-weight:600;font-size:0.4rem;letter-spacing:0.32em;text-transform:uppercase;color:#BF9B6F;}
 .footer_desc{font-size:0.9375rem;color:#B89AAA;margin-top:1rem;max-width:34ch;line-height:1.6;}
 .footer_col_heading{font-family:'Mulish',system-ui,sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;color:#C79A5B;margin-bottom:1.125rem;}
 .footer_nav{display:flex;flex-direction:column;gap:0.6875rem;}
@@ -173,7 +174,7 @@ p{font-size:1rem;line-height:1.72;}
 
   <!-- ANNOUNCE BAR -->
   <div class="announce_bar">
-    <span data-fr="Reçois uniquement sur rendez-vous — " data-he="קבלה בתיאום מראש בלבד — ">Reçois uniquement sur rendez-vous — </span><a class="announce_link" href="https://wa.me/972539513054" target="_blank" rel="noopener"><strong data-fr="Prenez RDV sur WhatsApp" data-he="קבעו תור בוואטסאפ">Prenez RDV sur WhatsApp</strong></a>
+    <span class="announce_rdv" data-fr="Uniquement sur rendez-vous" data-he="קבלה בתיאום מראש בלבד">Uniquement sur rendez-vous</span>
   </div>
 
   <!-- NAVBAR -->
@@ -470,7 +471,11 @@ p{font-size:1rem;line-height:1.72;}
             <div class="footer_brand_inner">
               <div class="footer_brand_mono_wrap"><div class="brand_mono"></div></div>
               <div class="footer_name">Hannah Guirchoun</div>
-              <div class="footer_role" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
+              <div class="footer_role_row">
+                <div class="footer_role_line"></div>
+                <div class="footer_role" data-fr="Beauty Artist" data-he="ביוטי ארטיסט">Beauty Artist</div>
+                <div class="footer_role_line"></div>
+              </div>
             </div>
           </div>
           <div>
