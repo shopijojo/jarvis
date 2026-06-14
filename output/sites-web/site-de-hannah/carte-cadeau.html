@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte Cadeau — Hanna Guirchoun · Institut de beauté</title>
+<meta name="description" content="Offrez un moment de beauté avec une carte cadeau personnalisée Hanna Guirchoun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Mulish:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* ================================================================
+   BASE
+   ================================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background-color:#F6EEE6;color:#1E0619;font-family:'Mulish',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.7;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+
+/* ================================================================
+   NAV
+   ================================================================ */
+.page_nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.125rem 2rem;
+  background:rgba(246,238,230,0.92);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid #E8DDD4;
+  position:sticky;top:0;z-index:100;
+}
+.nav_back{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:'Mulish',sans-serif;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;color:#6B3A56;
+  transition:color 0.2s,gap 0.2s;
+}
+.nav_back:hover{color:#90405A;gap:0.75rem;}
+.nav_brand_text{
+  font-family:'Mulish',sans-serif;font-size:0.5625rem;font-weight:700;
+  letter-spacing:0.28em;text-transform:uppercase;color:#BF9B6F;
+}
+.nav_brand_text strong{color:#7A1A63;font-weight:700;}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.page_hero{
+  text-align:center;
+  padding:3.75rem 2rem 1.5rem;
+}
+.hero_eyebrow{
+  display:inline-flex;align-items:center;gap:0.75rem;
+  font-family:'Mulish',sans-serif;text-transform:uppercase;
+  letter-spacing:0.34em;font-size:0.625rem;font-weight:700;color:#8F6230;
+  margin-bottom:1.125rem;
+}
+.eyebrow_line{width:1.875rem;height:1px;background:#C79A5B;display:block;border-radius:1px;}
+.page_hero_h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:600;font-size:clamp(2rem,5vw,3.125rem);
+  color:#90405A;line-height:1.08;margin-bottom:0.875rem;
+}
+.page_hero_sub{
+  font-size:1.0625rem;color:#6B3A56;
+  max-width:48ch;margin:0 auto;line-height:1.65;
+}
+
+/* ================================================================
+   MAIN LAYOUT
+   ================================================================ */
+.gc_layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  max-width:78rem;
+  margin:2.75rem auto 6rem;
+  padding:0 2rem;
+  align-items:start;
+}
+
+/* ================================================================
+   CARD PREVIEW
+   ================================================================ */
+.gc_preview_wrap{position:sticky;top:5.5rem;}
+
+.gc_preview_label{
+  display:flex;align-items:center;gap:0.625rem;
+  font-family:'Mulish',sans-serif;font-size:0.5625rem;font-weight:700;
+  letter-spacing:0.28em;text-transform:uppercase;color:#8F6230;
+  margin-bottom:0.875rem;
+}
+.preview_dot{
+  width:0.4375rem;height:0.4375rem;border-radius:50%;background:#B85A79;display:block;
+  animation:dot-pulse 2.2s ease-in-out infinite;
+}
+@keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.35;transform:scale(0.65);}}
+
+/* THE CARD */
+.gc_card{
+  position:relative;
+  aspect-ratio:1.75/1;
+  width:100%;border-radius:1.625rem;overflow:hidden;
+  background:#1E0619;
+  padding:1.375rem 1.625rem;
+  display:flex;flex-direction:column;
+  box-shadow:0 2.5rem 5rem -1.5rem rgba(43,10,36,0.58),0 0 0 1px rgba(255,255,255,0.05);
+  transition:box-shadow 0.4s ease;
+}
+.gc_card:hover{box-shadow:0 3rem 6rem -1.5rem rgba(43,10,36,0.7),0 0 0 1px rgba(255,255,255,0.07);}
+
+/* Card background layers */
+.gc_card_bg{
+  position:absolute;inset:0;
+  background:linear-gradient(145deg,#1A0514 0%,#2B0A24 50%,#38102C 100%);
+}
+.gc_card_radial{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 90% 70% at 90% 15%, rgba(199,154,91,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 5% 85%, rgba(184,90,121,0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(90,20,60,0.3) 0%, transparent 70%);
+}
+.gc_card_shimmer{
+  position:absolute;inset:0;
+  background:linear-gradient(118deg,transparent 20%,rgba(255,255,255,0.05) 46%,rgba(255,255,255,0.08) 50%,rgba(255,255,255,0.05) 54%,transparent 80%);
+  background-size:250% 100%;
+  animation:shimmer-slide 6s ease-in-out infinite;
+}
+@keyframes shimmer-slide{0%{background-position:180% 0;}100%{background-position:-180% 0;}}
+
+/* Inner gold border */
+.gc_card_border{
+  position:absolute;inset:0.5625rem;
+  border:1px solid rgba(199,154,91,0.28);
+  border-radius:calc(1.625rem - 0.5625rem);
+  pointer-events:none;
+}
+/* Corner ornaments */
+.gc_card_corner{
+  position:absolute;width:1rem;height:1rem;
+  border-color:rgba(199,154,91,0.45);border-style:solid;
+}
+.gc_card_corner.tl{top:0.9375rem;left:0.9375rem;border-width:1.5px 0 0 1.5px;border-radius:2px 0 0 0;}
+.gc_card_corner.tr{top:0.9375rem;right:0.9375rem;border-width:1.5px 1.5px 0 0;border-radius:0 2px 0 0;}
+.gc_card_corner.bl{bottom:0.9375rem;left:0.9375rem;border-width:0 0 1.5px 1.5px;border-radius:0 0 0 2px;}
+.gc_card_corner.br{bottom:0.9375rem;right:0.9375rem;border-width:0 1.5px 1.5px 0;border-radius:0 0 2px 0;}
+/* Sparkles */
+.gc_card_sp{
+  position:absolute;width:0.2rem;height:0.2rem;border-radius:50%;background:#C79A5B;
+  animation:sp-blink 3s ease-in-out infinite;
+}
+.gc_card_sp:nth-child(1){top:20%;left:9%;animation-delay:0s;}
+.gc_card_sp:nth-child(2){top:38%;right:11%;animation-delay:1.1s;}
+.gc_card_sp:nth-child(3){bottom:30%;left:20%;animation-delay:2.2s;}
+.gc_card_sp:nth-child(4){bottom:42%;right:25%;animation-delay:0.6s;}
+@keyframes sp-blink{0%,100%{opacity:0.8;}50%{opacity:0.15;}}
+
+/* Card content */
+.gc_card_inner{
+  position:relative;z-index:5;
+  height:100%;display:flex;flex-direction:column;justify-content:space-between;
+}
+.gc_card_head{display:flex;align-items:flex-start;justify-content:space-between;}
+.gc_card_eyebrow{
+  font-family:'Mulish',sans-serif;font-size:0.5rem;font-weight:700;
+  letter-spacing:0.34em;text-transform:uppercase;color:#C79A5B;
+  display:flex;align-items:center;gap:0.4em;
+}
+.gc_card_star{font-size:0.5625rem;}
+.gc_card_brand{
+  font-family:'Mulish',sans-serif;font-size:0.4375rem;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(199,154,91,0.6);text-align:right;line-height:1.6;
+}
+.gc_card_brand strong{display:block;font-size:0.5rem;color:rgba(199,154,91,0.85);}
+
+.gc_card_mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0.625rem 0 0.375rem;}
+.gc_card_pour{
+  font-family:'Mulish',sans-serif;font-size:0.4375rem;font-weight:700;
+  letter-spacing:0.3em;text-transform:uppercase;color:rgba(199,154,91,0.6);
+  margin-bottom:0.1875rem;
+}
+.gc_card_recipient{
+  font-family:'Playfair Display',Georgia,serif;font-style:italic;
+  font-size:clamp(1.25rem,3.5vw,2rem);line-height:1.1;color:#fff;
+  transition:color 0.3s;
+}
+.gc_card_recipient.is-ph{color:rgba(255,255,255,0.2);}
+.gc_card_message_text{
+  font-family:'EB Garamond',Garamond,Georgia,serif;font-style:italic;
+  font-size:0.625rem;color:rgba(255,255,255,0.45);
+  margin-top:0.375rem;line-height:1.55;max-width:38ch;
+  transition:color 0.3s;
+}
+.gc_card_message_text.is-ph{color:rgba(255,255,255,0.15);}
+
+.gc_card_foot{}
+.gc_card_sep{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(199,154,91,0.3),rgba(199,154,91,0.5),rgba(199,154,91,0.3),transparent);
+  margin:0.4375rem 0 0.5rem;
+}
+.gc_card_bottom_row{display:flex;align-items:flex-end;justify-content:space-between;}
+.gc_card_sender_block{}
+.gc_card_block_label{
+  font-family:'Mulish',sans-serif;font-size:0.375rem;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;color:rgba(199,154,91,0.5);
+  margin-bottom:0.125rem;
+}
+.gc_card_sender_name{
+  font-family:'Playfair Display',Georgia,serif;font-size:0.6875rem;color:rgba(255,255,255,0.65);
+  transition:color 0.3s;
+}
+.gc_card_sender_name.is-ph{color:rgba(255,255,255,0.18);}
+.gc_card_amount_block{text-align:right;}
+.gc_card_amount_val{
+  font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;
+  color:#C79A5B;line-height:1;
+  transition:color 0.3s,font-size 0.3s;
+}
+.gc_card_amount_val.is-ph{color:rgba(199,154,91,0.2);font-size:0.6875rem;}
+
+.gc_card_info_row{display:flex;align-items:center;justify-content:space-between;margin-top:0.3125rem;}
+.gc_card_institute{
+  font-family:'Mulish',sans-serif;font-size:0.375rem;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;color:rgba(199,154,91,0.35);
+}
+.gc_card_code{
+  font-family:'Mulish',sans-serif;font-size:0.375rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:rgba(199,154,91,0.28);
+  transition:color 0.4s;
+}
+.gc_card_code.is-ready{color:rgba(199,154,91,0.55);}
+
+.gc_preview_hint{
+  margin-top:1.125rem;font-size:0.8125rem;color:rgba(107,58,86,0.65);
+  text-align:center;line-height:1.55;max-width:36ch;margin-left:auto;margin-right:auto;
+}
+
+/* ================================================================
+   FORM
+   ================================================================ */
+.gc_form_wrap{
+  background:#fff;
+  border:1px solid #E8DDD4;
+  border-radius:2rem;
+  padding:2.5rem;
+}
+.gc_form_heading{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.4375rem;color:#90405A;margin-bottom:0.375rem;
+}
+.gc_form_sub{font-size:0.875rem;color:#6B3A56;margin-bottom:2.125rem;line-height:1.6;}
+
+.gc_field{margin-bottom:1.5rem;}
+.gc_label{
+  display:block;
+  font-family:'Mulish',sans-serif;font-size:0.5625rem;font-weight:700;
+  letter-spacing:0.26em;text-transform:uppercase;color:#8F6230;
+  margin-bottom:0.5625rem;
+}
+.gc_input{
+  width:100%;
+  padding:0.8125rem 1.125rem;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1rem;font-style:italic;
+  color:#1E0619;background:#FAF4EF;
+  border:1.5px solid #E8DDD4;border-radius:0.875rem;
+  outline:none;
+  transition:border-color 0.22s,box-shadow 0.22s;
+  line-height:1.45;
+}
+.gc_input::placeholder{color:rgba(107,58,86,0.3);font-style:italic;}
+.gc_input:focus{border-color:#B85A79;box-shadow:0 0 0 3px rgba(184,90,121,0.1);}
+.gc_input.is-error{border-color:#E05A5A;animation:shake 0.35s ease;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+textarea.gc_input{resize:none;min-height:5.5rem;font-size:0.9375rem;}
+.gc_input_meta{display:flex;justify-content:flex-end;margin-top:0.375rem;}
+.gc_char_count{font-size:0.625rem;color:rgba(107,58,86,0.45);font-family:'Mulish',sans-serif;}
+
+/* Amount pills */
+.gc_pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.gc_pill{
+  font-family:'Mulish',sans-serif;font-size:0.8125rem;font-weight:700;
+  letter-spacing:0.04em;
+  padding:0.5625rem 1.125rem;border-radius:9999rem;
+  border:1.5px solid #DBBE98;background:transparent;color:#6B3A56;
+  cursor:pointer;transition:all 0.2s;
+}
+.gc_pill:hover{border-color:#B85A79;color:#90405A;background:rgba(184,90,121,0.06);}
+.gc_pill.is-active{background:#2B0A24;border-color:#2B0A24;color:#C79A5B;}
+.gc_custom_wrap{margin-top:0.75rem;display:none;}
+.gc_custom_wrap.is-open{display:block;}
+.gc_custom_wrap .gc_input{font-style:normal;font-family:'Mulish',sans-serif;font-size:0.9375rem;}
+
+/* Submit */
+.gc_submit{
+  width:100%;margin-top:2.125rem;
+  padding:1.125rem 2rem;
+  font-family:'Mulish',sans-serif;font-size:0.9375rem;font-weight:700;letter-spacing:0.04em;
+  background:#90405A;color:#fff;
+  border:none;border-radius:9999rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:0.625rem;
+  transition:background 0.25s,transform 0.2s,box-shadow 0.25s;
+  box-shadow:0 0.75rem 2rem -0.75rem rgba(144,64,90,0.55);
+}
+.gc_submit:hover{background:#B85A79;transform:translateY(-2px);box-shadow:0 1.25rem 2.5rem -0.75rem rgba(184,90,121,0.55);}
+.gc_submit:active{transform:translateY(0);}
+.gc_submit_star{font-size:1rem;}
+
+/* ================================================================
+   RESULT OVERLAY
+   ================================================================ */
+.gc_overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(20,4,16,0.78);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  padding:1.25rem;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.38s ease;
+}
+.gc_overlay.is-open{opacity:1;pointer-events:auto;}
+
+.gc_result{
+  background:#FAF4EF;border-radius:2rem;
+  width:100%;max-width:44rem;
+  max-height:92vh;overflow-y:auto;
+  transform:translateY(2rem) scale(0.97);
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.38s ease;
+  opacity:0;
+}
+.gc_overlay.is-open .gc_result{transform:translateY(0) scale(1);opacity:1;}
+
+.gc_result_head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 1.75rem 1rem;
+}
+.gc_result_title{
+  font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:#90405A;
+}
+.gc_result_close{
+  width:2.25rem;height:2.25rem;border-radius:50%;
+  background:transparent;border:1.5px solid #E8DDD4;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#6B3A56;transition:background 0.2s,border-color 0.2s;flex-shrink:0;
+}
+.gc_result_close:hover{background:#F5E0E8;border-color:#B85A79;}
+
+.gc_result_card_zone{padding:0 1.75rem;}
+
+.gc_result_body{padding:1.625rem 1.75rem 2rem;}
+
+.gc_result_success{
+  display:flex;align-items:center;gap:0.875rem;
+  background:linear-gradient(135deg,rgba(199,154,91,0.08),rgba(184,90,121,0.06));
+  border:1.5px solid rgba(199,154,91,0.35);
+  border-radius:1rem;padding:1.125rem 1.375rem;
+  margin-bottom:1.625rem;
+}
+.gc_result_success_icon{
+  font-size:1.375rem;flex-shrink:0;
+  width:2.5rem;height:2.5rem;border-radius:50%;
+  background:rgba(199,154,91,0.15);
+  display:flex;align-items:center;justify-content:center;
+}
+.gc_result_success_text{}
+.gc_result_success_title{
+  font-family:'Playfair Display',Georgia,serif;font-size:0.9375rem;color:#6B3A56;font-weight:600;
+  margin-bottom:0.125rem;
+}
+.gc_result_success_sub{font-size:0.8125rem;color:#8F6230;line-height:1.5;}
+
+.gc_result_btns{display:flex;flex-direction:column;gap:0.75rem;}
+
+.gc_btn{
+  display:flex;align-items:center;justify-content:center;gap:0.625rem;
+  padding:0.9375rem 1.75rem;border-radius:9999rem;
+  font-family:'Mulish',sans-serif;font-size:0.9375rem;font-weight:700;letter-spacing:0.03em;
+  cursor:pointer;border:none;transition:all 0.25s;width:100%;
+  text-decoration:none;
+}
+.gc_btn.is-dark{background:#2B0A24;color:#C79A5B;box-shadow:0 0.75rem 2rem -0.75rem rgba(43,10,36,0.5);}
+.gc_btn.is-dark:hover{background:#1E0619;}
+.gc_btn.is-wa{background:#1FB155;color:#fff;box-shadow:0 0.75rem 2rem -0.75rem rgba(31,177,85,0.45);}
+.gc_btn.is-wa:hover{background:#23c763;}
+.gc_btn.is-ghost{background:transparent;color:#6B3A56;border:1.5px solid #E8DDD4;}
+.gc_btn.is-ghost:hover{border-color:#B85A79;color:#90405A;}
+
+/* ================================================================
+   PRINT-ONLY CARD (invisible on screen, visible when printing)
+   ================================================================ */
+.print_zone{display:none;}
+
+@media print{
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  html,body{background:#F6EEE6 !important;}
+  body > *:not(.print_zone){display:none !important;}
+  .print_zone{
+    display:flex !important;
+    align-items:center;justify-content:center;
+    width:100vw;height:100vh;
+    background:#F6EEE6;
+    padding:1.5cm;
+  }
+  .print_zone .gc_card{
+    width:100%;max-width:18cm;
+    border-radius:1cm;
+    box-shadow:none !important;
+    font-size:1.15em;
+  }
+  .print_zone .gc_card_recipient{font-size:clamp(1.5rem,5vw,2.5rem) !important;}
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:991px){
+  .gc_layout{grid-template-columns:1fr;gap:2rem;}
+  .gc_preview_wrap{position:static;}
+}
+@media(max-width:767px){
+  .gc_layout{padding:0 1rem;margin-top:2rem;}
+  .page_hero{padding:2.5rem 1rem 1rem;}
+  .page_nav{padding:1rem 1.25rem;}
+  .gc_form_wrap{padding:1.75rem 1.375rem;border-radius:1.5rem;}
+  .gc_result_card_zone{padding:0 1.125rem;}
+  .gc_result_head{padding:1.125rem 1.25rem 0.75rem;}
+  .gc_result_body{padding:1.25rem 1.25rem 1.625rem;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="page_nav">
+  <a class="nav_back" href="index.html">
+    ← Retour au site
+  </a>
+  <div class="nav_brand_text">
+    <strong>Hanna Guirchoun</strong> · Institut de beauté · Jérusalem
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page_hero">
+  <div class="hero_eyebrow">
+    <span class="eyebrow_line"></span>
+    Offrir de la beauté
+    <span class="eyebrow_line"></span>
+  </div>
+  <h1 class="page_hero_h1">Créez votre carte cadeau</h1>
+  <p class="page_hero_sub">Personnalisez un moment de beauté pour la personne que vous aimez. Votre carte se met à jour en temps réel.</p>
+</header>
+
+<!-- MAIN -->
+<main class="gc_layout">
+
+  <!-- PREVIEW -->
+  <div class="gc_preview_wrap">
+    <div class="gc_preview_label">
+      <span class="preview_dot"></span>
+      Aperçu en direct
+    </div>
+
+    <div class="gc_card" id="preview-card">
+      <!-- Background layers -->
+      <div class="gc_card_bg"></div>
+      <div class="gc_card_radial"></div>
+      <div class="gc_card_shimmer"></div>
+      <!-- Border & ornaments -->
+      <div class="gc_card_border"></div>
+      <div class="gc_card_corner tl"></div>
+      <div class="gc_card_corner tr"></div>
+      <div class="gc_card_corner bl"></div>
+      <div class="gc_card_corner br"></div>
+      <!-- Sparkles -->
+      <div class="gc_card_sp"></div>
+      <div class="gc_card_sp"></div>
+      <div class="gc_card_sp"></div>
+      <div class="gc_card_sp"></div>
+      <!-- Content -->
+      <div class="gc_card_inner">
+        <div class="gc_card_head">
+          <div class="gc_card_eyebrow"><span class="gc_card_star">✦</span> Carte Cadeau</div>
+          <div class="gc_card_brand">Institut de beauté<strong>Hanna Guirchoun</strong></div>
+        </div>
+        <div class="gc_card_mid">
+          <div class="gc_card_pour">Pour</div>
+          <div class="gc_card_recipient is-ph" id="pv-recipient">Prénom de la destinataire</div>
+          <div class="gc_card_message_text is-ph" id="pv-message">Votre message personnel apparaîtra ici…</div>
+        </div>
+        <div class="gc_card_foot">
+          <div class="gc_card_sep"></div>
+          <div class="gc_card_bottom_row">
+            <div class="gc_card_sender_block">
+              <div class="gc_card_block_label">Offert par</div>
+              <div class="gc_card_sender_name is-ph" id="pv-sender">Votre prénom</div>
+            </div>
+            <div class="gc_card_amount_block">
+              <div class="gc_card_block_label">Valeur</div>
+              <div class="gc_card_amount_val is-ph" id="pv-amount">— ₪</div>
+            </div>
+          </div>
+          <div class="gc_card_info_row">
+            <div class="gc_card_institute">Hanna Guirchoun · Jérusalem</div>
+            <div class="gc_card_code" id="pv-code">HG-XXXX-XXXX</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="gc_preview_hint">Remplissez le formulaire et la carte s'anime instantanément.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="gc_form_wrap">
+    <h2 class="gc_form_heading">Personnalisez la carte</h2>
+    <p class="gc_form_sub">Quelques secondes suffisent pour créer quelque chose d'inoubliable.</p>
+
+    <div class="gc_field">
+      <label class="gc_label" for="f-sender">De la part de</label>
+      <input class="gc_input" id="f-sender" type="text" placeholder="Votre prénom" maxlength="40" autocomplete="off">
+    </div>
+
+    <div class="gc_field">
+      <label class="gc_label" for="f-recipient">Pour</label>
+      <input class="gc_input" id="f-recipient" type="text" placeholder="Prénom de la destinataire" maxlength="40" autocomplete="off">
+    </div>
+
+    <div class="gc_field">
+      <label class="gc_label" for="f-message">Message personnel</label>
+      <textarea class="gc_input" id="f-message" placeholder="Un mot du cœur, une pensée douce, une promesse de beauté…" maxlength="150" rows="3"></textarea>
+      <div class="gc_input_meta"><span class="gc_char_count"><span id="msg-n">0</span> / 150</span></div>
+    </div>
+
+    <div class="gc_field">
+      <label class="gc_label">Montant</label>
+      <div class="gc_pills">
+        <button class="gc_pill" data-val="100 ₪">100 ₪</button>
+        <button class="gc_pill" data-val="150 ₪">150 ₪</button>
+        <button class="gc_pill" data-val="200 ₪">200 ₪</button>
+        <button class="gc_pill" data-val="280 ₪">280 ₪ — soin visage</button>
+        <button class="gc_pill" data-val="custom">Autre montant</button>
+      </div>
+      <div class="gc_custom_wrap" id="custom-wrap">
+        <input class="gc_input" id="f-amount" type="text" placeholder="Ex : 350 ₪" maxlength="20">
+      </div>
+    </div>
+
+    <button class="gc_submit" id="btn-gen">
+      <span class="gc_submit_star">✦</span>
+      <span>Créer ma carte cadeau</span>
+    </button>
+  </div>
+
+</main>
+
+<!-- PRINT ZONE (only shown when printing) -->
+<div class="print_zone" id="print-zone"></div>
+
+<!-- RESULT OVERLAY -->
+<div class="gc_overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Votre carte cadeau">
+  <div class="gc_result" id="result-panel">
+
+    <div class="gc_result_head">
+      <div class="gc_result_title">Votre carte cadeau ✦</div>
+      <button class="gc_result_close" id="btn-close" aria-label="Fermer">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M1 1l10 10M11 1L1 11"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="gc_result_card_zone" id="result-card-zone">
+      <!-- Card injected by JS -->
+    </div>
+
+    <div class="gc_result_body">
+      <div class="gc_result_success">
+        <div class="gc_result_success_icon">✦</div>
+        <div class="gc_result_success_text">
+          <div class="gc_result_success_title">Carte créée avec succès</div>
+          <div class="gc_result_success_sub" id="result-note">Imprimez-la ou enregistrez-la en PDF, puis contactez Hannah pour valider votre paiement.</div>
+        </div>
+      </div>
+
+      <div class="gc_result_btns">
+        <button class="gc_btn is-dark" onclick="window.print()">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6V2h8v4M4 12H2a1 1 0 01-1-1V7a1 1 0 011-1h12a1 1 0 011 1v4a1 1 0 01-1 1h-2M4 9h8v5H4z"/>
+          </svg>
+          Imprimer · Enregistrer en PDF
+        </button>
+        <a class="gc_btn is-wa" id="wa-btn" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Envoyer le paiement à Hannah
+        </a>
+        <button class="gc_btn is-ghost" id="btn-edit">
+          Modifier la carte
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+
+  var fSender    = document.getElementById('f-sender');
+  var fRecipient = document.getElementById('f-recipient');
+  var fMessage   = document.getElementById('f-message');
+  var fAmount    = document.getElementById('f-amount');
+  var msgN       = document.getElementById('msg-n');
+  var customWrap = document.getElementById('custom-wrap');
+  var btnGen     = document.getElementById('btn-gen');
+  var overlay    = document.getElementById('overlay');
+  var btnClose   = document.getElementById('btn-close');
+  var btnEdit    = document.getElementById('btn-edit');
+  var resultZone = document.getElementById('result-card-zone');
+  var printZone  = document.getElementById('print-zone');
+  var waBtn      = document.getElementById('wa-btn');
+  var resultNote = document.getElementById('result-note');
+  var pills      = document.querySelectorAll('.gc_pill');
+
+  var pvRecipient = document.getElementById('pv-recipient');
+  var pvMessage   = document.getElementById('pv-message');
+  var pvSender    = document.getElementById('pv-sender');
+  var pvAmount    = document.getElementById('pv-amount');
+  var pvCode      = document.getElementById('pv-code');
+
+  var selectedAmt = '';
+  var currentCode = 'HG-XXXX-XXXX';
+
+  function genCode() {
+    var a = Math.floor(1000 + Math.random() * 9000);
+    var b = Math.floor(1000 + Math.random() * 9000);
+    return 'HG-' + a + '-' + b;
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function getAmount() {
+    if (selectedAmt === 'custom') return fAmount.value.trim();
+    return selectedAmt;
+  }
+
+  function updatePreview() {
+    var sender    = fSender.value.trim();
+    var recipient = fRecipient.value.trim();
+    var message   = fMessage.value.trim();
+    var amount    = getAmount();
+
+    if (recipient) {
+      pvRecipient.textContent = recipient;
+      pvRecipient.classList.remove('is-ph');
+    } else {
+      pvRecipient.textContent = 'Prénom de la destinataire';
+      pvRecipient.classList.add('is-ph');
+    }
+
+    if (message) {
+      pvMessage.textContent = '« ' + message + ' »';
+      pvMessage.classList.remove('is-ph');
+    } else {
+      pvMessage.textContent = 'Votre message personnel apparaîtra ici…';
+      pvMessage.classList.add('is-ph');
+    }
+
+    if (sender) {
+      pvSender.textContent = sender;
+      pvSender.classList.remove('is-ph');
+    } else {
+      pvSender.textContent = 'Votre prénom';
+      pvSender.classList.add('is-ph');
+    }
+
+    if (amount) {
+      pvAmount.textContent = amount;
+      pvAmount.classList.remove('is-ph');
+    } else {
+      pvAmount.textContent = '— ₪';
+      pvAmount.classList.add('is-ph');
+    }
+  }
+
+  fSender.addEventListener('input', updatePreview);
+  fRecipient.addEventListener('input', updatePreview);
+  fAmount.addEventListener('input', updatePreview);
+  fMessage.addEventListener('input', function () {
+    msgN.textContent = fMessage.value.length;
+    updatePreview();
+  });
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('is-active'); });
+      pill.classList.add('is-active');
+      selectedAmt = pill.dataset.val;
+      if (selectedAmt === 'custom') {
+        customWrap.classList.add('is-open');
+        fAmount.focus();
+      } else {
+        customWrap.classList.remove('is-open');
+      }
+      updatePreview();
+    });
+  });
+
+  function buildCardHTML(sender, recipient, message, amount, code) {
+    var msgLine = message
+      ? '<div class="gc_card_message_text">« ' + esc(message) + ' »</div>'
+      : '';
+    return [
+      '<div class="gc_card">',
+        '<div class="gc_card_bg"></div>',
+        '<div class="gc_card_radial"></div>',
+        '<div class="gc_card_shimmer"></div>',
+        '<div class="gc_card_border"></div>',
+        '<div class="gc_card_corner tl"></div>',
+        '<div class="gc_card_corner tr"></div>',
+        '<div class="gc_card_corner bl"></div>',
+        '<div class="gc_card_corner br"></div>',
+        '<div class="gc_card_sp"></div>',
+        '<div class="gc_card_sp"></div>',
+        '<div class="gc_card_sp"></div>',
+        '<div class="gc_card_sp"></div>',
+        '<div class="gc_card_inner">',
+          '<div class="gc_card_head">',
+            '<div class="gc_card_eyebrow"><span class="gc_card_star">✦</span> Carte Cadeau</div>',
+            '<div class="gc_card_brand">Institut de beauté<strong>Hanna Guirchoun</strong></div>',
+          '</div>',
+          '<div class="gc_card_mid">',
+            '<div class="gc_card_pour">Pour</div>',
+            '<div class="gc_card_recipient">' + esc(recipient) + '</div>',
+            msgLine,
+          '</div>',
+          '<div class="gc_card_foot">',
+            '<div class="gc_card_sep"></div>',
+            '<div class="gc_card_bottom_row">',
+              '<div class="gc_card_sender_block">',
+                '<div class="gc_card_block_label">Offert par</div>',
+                '<div class="gc_card_sender_name">' + esc(sender) + '</div>',
+              '</div>',
+              '<div class="gc_card_amount_block">',
+                '<div class="gc_card_block_label">Valeur</div>',
+                '<div class="gc_card_amount_val">' + esc(amount || 'À définir avec Hannah') + '</div>',
+              '</div>',
+            '</div>',
+            '<div class="gc_card_info_row">',
+              '<div class="gc_card_institute">Hanna Guirchoun · Jérusalem</div>',
+              '<div class="gc_card_code is-ready">' + esc(code) + '</div>',
+            '</div>',
+          '</div>',
+        '</div>',
+      '</div>'
+    ].join('');
+  }
+
+  function openOverlay() { overlay.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function closeOverlay() { overlay.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+  btnGen.addEventListener('click', function () {
+    var sender    = fSender.value.trim();
+    var recipient = fRecipient.value.trim();
+    var message   = fMessage.value.trim();
+    var amount    = getAmount();
+
+    if (!recipient) {
+      fRecipient.classList.add('is-error');
+      fRecipient.focus();
+      setTimeout(function () { fRecipient.classList.remove('is-error'); }, 800);
+      return;
+    }
+    if (!sender) {
+      fSender.classList.add('is-error');
+      fSender.focus();
+      setTimeout(function () { fSender.classList.remove('is-error'); }, 800);
+      return;
+    }
+
+    currentCode = genCode();
+    pvCode.textContent = currentCode;
+    pvCode.classList.add('is-ready');
+
+    var cardHTML = buildCardHTML(sender, recipient, message, amount, currentCode);
+    resultZone.innerHTML = cardHTML;
+    printZone.innerHTML  = cardHTML;
+
+    var amtLabel = amount ? amount : 'À définir';
+    resultNote.textContent = 'Imprimez-la ou enregistrez-la en PDF, puis contactez Hannah sur WhatsApp pour confirmer votre paiement.';
+
+    var waText = 'Bonjour Hannah ! Je viens de créer une carte cadeau pour '
+      + recipient + '. '
+      + (amount ? 'Montant : ' + amount + '. ' : '')
+      + 'De la part de : ' + sender + '. '
+      + (message ? 'Message : « ' + message + ' ». ' : '')
+      + 'Code : ' + currentCode + '.'
+      + ' Je vous envoie le paiement dès votre confirmation !';
+    waBtn.href = 'https://wa.me/972539513054?text=' + encodeURIComponent(waText);
+
+    openOverlay();
+  });
+
+  btnClose.addEventListener('click', closeOverlay);
+  btnEdit.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeOverlay(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeOverlay(); });
+
+})();
+</script>
+
+</body>
+</html>
